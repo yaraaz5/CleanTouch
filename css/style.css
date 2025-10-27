@@ -224,3 +224,66 @@ header{
 /*if you also need a background color, combine it (won’t erase the image) */
 header{ background-color:#fff; }
 
+/* توحيد تصميم صفحات Staff Profile */
+.staff-page {
+  font-family: inherit;
+  background-color: #fff;
+  color: #222;
+  padding: 20px 0;
+}
+
+/* تنسيق موحد لعناوين Staff */
+.staff-page h2 {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 26px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+/* تنسيق الجدول (نفس الخط والألوان العامة للموقع) */
+.staff-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.staff-page th,
+.staff-page td {
+  border: 1px solid #999;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.staff-page th {
+  background-color: #f2f2f2;
+  font-weight: 700;
+}
+
+/* الألوان للـ spanning و الـ Skills و Education */
+.profile-span { background: #ffe6cc; }
+.profile-skills { background: #dbe9ff; }
+.profile-edu { background: #d9f2d9; }
+
+/* القوائم الداخلية */
+.profile-skills ul,
+.profile-edu ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.95rem;
+}
+.profile-skills ul ul,
+.profile-edu ul ul {
+  margin-top: 4px;
+}
+
+/* جعل الجدول متناسق مع عرض الصفحة */
+.staff-page .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
