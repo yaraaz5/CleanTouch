@@ -3,89 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clean Touch — Services</title>
+  <title>Clean Touch — Home</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header>
   <div class="container header-row">
-    <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span class="title">Clean touch</span></a>
-    <nav><ul class="nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="services.html">Services</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="customer-dashboard.html">Customer Dashboard</a></li>
-      <li><a href="provider-dashboard.html">Provider Dashboard</a></li>
-    </ul></nav>
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Clean Touch logo">
+      <span class="title">Clean touch</span>
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+<li><a class="active" href="services.html">Services</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="customer-dashboard.html">Customer Dashboard</a></li>
+<li><a href="provider-dashboard.html">Provider Dashboard</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<main class="container">
-  <div class="page-header"><h1>Service</h1></div>
 
-  <div class="card" style="display:flex; gap:14px; align-items:flex-start">
-    <div style="flex:1">
-      <div class="cards-row">
-        <!-- كرري الكارد حسب الحاجة -->
-        <article class="service-card">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Service name</h3>
-            <p>Service description</p>
-            <p><strong>Price:</strong> 30 SAR</p>
-            <a class="btn" href="request-service.html">Book Now</a>
-          </div>
-        </article>
+<section class="services-page">
 
-        <article class="service-card">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Service name</h3>
-            <p>Service description</p>
-            <p><strong>Price:</strong> 50 SAR</p>
-            <a class="btn" href="request-service.html">Book Now</a>
-          </div>
-        </article>
+  <!-- Title Box -->
+  <div class="services-header-box">
+    <h2>Services</h2>
+  </div>
 
-        <article class="service-card">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Service name</h3>
-            <p>Service description</p>
-            <p><strong>Price:</strong> 40 SAR</p>
-            <a class="btn" href="request-service.html">Book Now</a>
-          </div>
-        </article>
 
-        <article class="service-card">
-          <div class="thumb"></div>
-          <div class="content">
-            <h3>Service name</h3>
-            <p>Service description</p>
-            <p><strong>Price:</strong> 25 SAR</p>
-            <a class="btn" href="request-service.html">Book Now</a>
-          </div>
-        </article>
-      </div>
-    </div>
 
-    <!-- صندوق الفرز (شكلي فقط بدون JS) -->
-    <aside class="sort-box">
-      <label for="sort">Sort by</label>
-      <select id="sort">
+
+    
+
+
+    <div class="sort-box">
+      <label for="sort">Sort by:</label>
+      <select id="sort" name="sort">
         <optgroup label="Name">
-          <option>A–Z</option>
-          <option>Z–A</option>
+          <option value="a-z">A - Z</option>
+          <option value="z-a">Z - A</option>
         </optgroup>
         <optgroup label="Price">
-          <option>Low to High</option>
-          <option>High to Low</option>
+          <option value="low-high">Low to High</option>
+          <option value="high-low">High to Low</option>
         </optgroup>
       </select>
-    </aside>
+    </div>
   </div>
-</main>
+	  
+	  
+	  
+	  
+	  
 
+      <!-- Services List -->
+      <div class="services-container">
+
+        <!-- Washing -->
+        <div class="service-box">
+          <img src="images/w.png" alt="Washing Service" class="service-img">
+          <h3>Washing</h3>
+          <p>Professional washing that keeps your clothes clean and fresh.</p>
+          <p class="price">SAR 30</p>
+          <button class="btn" onclick="location.href='request-service.html?service=Washing'">Book Now</button>
+        </div>
+
+        <!-- Ironing -->
+        <div class="service-box">
+          <img src="images/ii.png" alt="Ironing Service" class="service-img">
+          <h3>Ironing</h3>
+          <p>Expert ironing for neat, wrinkle-free garments.</p>
+          <p class="price">SAR 40</p>
+          <button class="btn" onclick="location.href='request-service.html?service=Ironing'">Book Now</button>
+        </div>
+
+        <!-- Folding -->
+        <div class="service-box">
+          <img src="images/f.png" alt="Folding Clothes Professionally" class="service-img">
+          <h3>Folding Clothes Professionally</h3>
+          <p>Careful and professional folding to keep clothes organized.</p>
+          <p class="price">SAR 25</p>
+          <button class="btn" onclick="location.href='request-service.html?service=Folding'">Book Now</button>
+        </div>
+
+        <!-- Dry-Cleaning -->
+        <div class="service-box">
+          <img src="images/ddd.png" alt="Dry Cleaning Service" class="service-img">
+          <h3>Dry-Cleaning</h3>
+          <p>Premium dry-cleaning for delicate fabrics requiring extra care.</p>
+          <p class="price">SAR 50</p>
+          <button class="btn" onclick="location.href='request-service.html?service=Dry-cleaning'">Book Now</button>
+        </div>
+
+      </div>
+    </section>
+   
 <footer>
   <div class="container footer-inner">
     <div class="footer-col"><img src="images/logo.png" alt="logo" style="width:150px; height:150px;" ></div>

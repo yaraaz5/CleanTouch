@@ -240,3 +240,427 @@ header{ background-color:#fff; }
   background-color: #f4faff;
 }
 
+/* تعديل  */
+
+
+/* ===== Home Page Styling ===== */
+/* ===== Light Blue Section Style (Vision + Offers) ===== */
+.light-section {
+  background-color: #e6f4ff;        /* سماوي فاتح ناعم */
+  text-align: center;               /* النص بالمنتصف */
+  border-radius: 10px;              /* زوايا ناعمة */
+  padding: 50px 20px;               /* مساحة مريحة */
+  margin: 40px auto;                /* مسافة بين الأقسام */
+  width: 90%;
+  max-width: 900px;
+}
+
+/* ===== تنسيق النصوص ===== */
+.light-section h2 {
+  font-size: 2em;
+  color: #0d3b66;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.light-section p {
+  color: #333;
+  font-size: 1.05em;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;   /* يخلي النص نفسه بالنص */
+}
+
+.offer-box h3 {
+  font-size: 1.3em;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+
+
+/* Services Section (Home) */
+.services-home {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.services-home h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.service-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-info h3 {
+    font-size: 1.3em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.service-info p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 1.1em;
+}
+
+/* Reviews Section */
+.reviews {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.reviews h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.review {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review h3 {
+    font-size: 1.2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.review span {
+    color: #ffb400;
+    font-size: 1.2em;
+}
+
+/* ===== End of Home Page Styling ===== */
+
+/* ===== User Icon in Reviews ===== */
+.user-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px auto; /* يجعل الصورة في المنتصف */
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+/* ===== Services Page Styling ===== */
+
+.services-page {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.services-page h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.service-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;      /* يجعل الصورة تغطي المساحة بدون تمدد مشوّه */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    font-size: 1.3em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.service-box .price {
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 1.1em;
+}
+
+/* ===== End of Services Page Styling ===== */
+
+/* تعديل المسافة بين العنوان وصندوق الفرز (Sort by) */
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px; /* يضيف فراغ بين العنوان وبطاقات الخدمات */
+  padding: 0 20px;
+}
+
+.sort-box {
+  margin-top: 10px; /* يبعد قائمة Sort شوي عن العنوان */
+}
+
+.sort-box select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Services page: raise the Sort by a bit and add gap below it */
+.services-page .sort-box{
+  margin-top: -8px;   /* يرفعه شوي لفوق */
+  margin-bottom: 16px;/* يضيف فراغ تحته عشان ما يلتصق بالكروت */
+}
+
+/* تأكد من وجود مسافة بسيطة فوق شبكة الكروت */
+.services-page .services-container{
+  margin-top: 8px;
+}
+
+/* ===== Hover Effect for Service Description ===== */
+
+
+/* ===== Featured Services Section (Home Page) ===== */
+.services-home {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.services-home h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.service-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 280px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.service-info h3 {
+  font-size: 1.3em;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.short-desc {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* الوصف الإضافي المخفي */
+.extra-desc {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #f0f8ff;
+  border-left: 4px solid #1e90ff;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.service-box:hover .extra-desc {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 6px;
+}
+
+
+/* ===== Services Section (Home Page) ===== */
+.services-home {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.services-home h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.service-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 280px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.service-info h3 {
+  font-size: 1.3em;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* الروابط داخل الخدمات */
+.service-info a {
+  color: inherit;             /* نفس لون النص */
+  text-decoration: none;      /* بدون خط تحت */
+}
+
+.service-info a:hover {
+  color: #1e90ff;             /* لون بسيط عند المرور */
+}
+
+.short-desc {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* الوصف الإضافي المخفي */
+.extra-desc {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #f0f8ff;
+  border-left: 4px solid #1e90ff;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.service-box:hover .extra-desc {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 6px;
+}
+
+/* ===== Services Page Title Box ===== */
+.services-header-box {
+  background-color: #e6f4ff;      /* خلفية سماوية ناعمة */
+  border: 1px solid #b3ddff;      /* حدود فاتحة */
+  border-radius: 10px;            /* زوايا ناعمة */
+  padding: 20px;
+  margin: 40px auto 30px;
+  text-align: center;             /* العنوان بالنص */
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);  /* ظل خفيف */
+}
+
+.services-header-box h2 {
+  font-size: 2em;
+  color: #0d3b66;
+  font-weight: 800;
+  margin: 0;
+}
