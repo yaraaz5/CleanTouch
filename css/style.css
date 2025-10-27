@@ -158,7 +158,7 @@ textarea{min-height:110px; resize:vertical}
   width:104px; height:104px;
   border-radius:50%;
   margin:0 auto 10px auto;
-  border:1px dashed #a8b5c3;      /* مكان الصورة فارغ */
+       /* مكان الصورة فارغ */
   background:transparent;
 }
 .member-name{ margin:6px 0 2px; font-weight:700; }
@@ -228,4 +228,15 @@ header{ background-color:#fff; }
 .profile-skills ul ul{margin-top:4px;list-style:circle}
 .profile-edu ul{margin:0;padding-left:18px;list-style:none}
 .profile-edu ul ul{margin-top:4px;list-style:circle}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  border: 2px solid #d0eaff;
+  background-color: #f4faff;
+}
 
