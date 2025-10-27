@@ -45,8 +45,8 @@ nav{margin-left:auto}
 footer{
   margin-top:40px; background:#e9f4ff; border-top:1px solid #d5e8ff;
 }
-.footer-inner{display:flex; gap:20px; align-items:center; justify-content: flex-start; padding:22px 0} /* CHANGED */
-.footer-col{display:flex; flex-direction: column; justify-content: flex-end;  } /*changed*/ 
+.footer-inner{display:flex; gap:20px; align-items:center; justify-content: flex-start; padding:22px 0}
+.footer-col{display:flex; flex-direction: column; justify-content: flex-end;}
 .footer-col h4{margin-bottom:8px}
 .copy{font-size:.9rem; color:#667085}
 
@@ -124,17 +124,18 @@ textarea{min-height:110px; resize:vertical}
 
 /* أزرار أسفل الفورم */
 .form-actions{display:flex; gap:12px; justify-content:flex-end; margin-top:10px}
+
 /* ===== About Us: hero blue box ===== */
 .about-hero{
-  background:#f0f7ff;            /* أزرق فاتح للصندوق */
+  background:#f0f7ff;
   border:1px solid #dbe7f3;
   border-radius:12px;
   padding:18px 16px;
   text-align:center;
   margin:24px 0 28px;
 }
-.about-hero h2{ margin:0 0 6px 0; }
-.about-hero .hero-sub{ margin:0; opacity:.85; }
+.about-hero h2{margin:0 0 6px 0;}
+.about-hero .hero-sub{margin:0; opacity:.85;}
 
 /* ===== Team grid (4 بطاقات) ===== */
 .team-grid{
@@ -143,8 +144,8 @@ textarea{min-height:110px; resize:vertical}
   gap:22px;
   justify-items:center;
 }
-@media (max-width:1000px){ .team-grid{ grid-template-columns:repeat(2, minmax(220px,1fr)); } }
-@media (max-width:560px){  .team-grid{ grid-template-columns:1fr; } }
+@media (max-width:1000px){.team-grid{grid-template-columns:repeat(2, minmax(220px,1fr));}}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr;}}
 
 .member-card{
   width:240px;
@@ -152,19 +153,16 @@ textarea{min-height:110px; resize:vertical}
   border-radius:10px;
   padding:18px 16px;
   background:#fff;
-  text-align:center;              /* كل شيء بالنص */
+  text-align:center;
 }
 .avatar{
   width:104px; height:104px;
   border-radius:50%;
   margin:0 auto 10px auto;
-       /* مكان الصورة فارغ */
   background:transparent;
 }
-.member-name{ margin:6px 0 2px; font-weight:700; }
-.member-title, .member-email{ margin:4px 0; }
-
-/* توحيد لون رابط الاسم (حتى بعد الزيارة ما يتغير) */
+.member-name{margin:6px 0 2px; font-weight:700;}
+.member-title, .member-email{margin:4px 0;}
 .member-name a:link,
 .member-name a:visited,
 .member-name a:hover,
@@ -173,972 +171,280 @@ textarea{min-height:110px; resize:vertical}
   text-decoration:none;
 }
 
-/* ===== CTA box أطول ومركّز ===== */
+/* ===== CTA box ===== */
 .cta-box{
   max-width:760px;
   margin:28px auto 60px;
   background:#f8fbff;
   border:2px solid #1e90ff;
   border-radius:14px;
-  padding:28px 22px;              /* أطول */
+  padding:28px 22px;
   text-align:center;
 }
-.cta-box h3{ margin:0 0 10px 0; }
+.cta-box h3{margin:0 0 10px 0;}
 .cta-text{
   max-width:620px;
-  margin:0 auto 16px;             /* النص بالنص */
+  margin:0 auto 16px;
   line-height:1.6;
 }
-.cta-actions{ display:flex; justify-content:center; }
-.btn{
-  background:#1e90ff;
-  color:#fff;
-  padding:10px 24px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
-  display:inline-block;
-}
-.btn:hover{ background:#1177cc; }
-/* === نفس الخط المستخدم في عناوين الصفحات (مثل Service) === */
-.about-hero h2,
-.cta-box h3 {
-  font-family: inherit;   /* يستخدم نفس الخط العام للموقع */
-  font-weight: 800;       /* نفس السماكة مثل كلمة Service */
-  font-size: 28px;        /* نفس الحجم تقريبي */
-  color: #000;            /* لون أسود غامق مثل العنوان */
-  text-align: center;
+.cta-actions{display:flex; justify-content:center;}
+.btn{background:#1e90ff; color:#fff; padding:10px 24px; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block;}
+.btn:hover{background:#1177cc;}
+.about-hero h2, .cta-box h3 {
+  font-family:inherit;
+  font-weight:800;
+  font-size:28px;
+  color:#000;
+  text-align:center;
 }
 
 header{
-  /* correct relative path from css/style.css -> ../images */
-  background-image: url("../images/bubbles.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 120px;
-  /* don't set opacity on the whole header/footer */
-  /* background-attachment: fixed;  <-- optional; avoid on mobile */
+  background-image:url("../images/bubbles.png");
+  background-repeat:no-repeat;
+  background-position:right center;
+  background-size:120px;
+  background-color:#fff;
 }
-
-
-/*if you also need a background color, combine it (won’t erase the image) */
-header{ background-color:#fff; }
 
 .profile-skills ul{margin:0;padding-left:18px;list-style:disc}
 .profile-skills ul ul{margin-top:4px;list-style:circle}
 .profile-edu ul{margin:0;padding-left:18px;list-style:none}
 .profile-edu ul ul{margin-top:4px;list-style:circle}
-/*  تعديلك*/
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
-
-
-
-
 
 /* ===== Home Page Styling ===== */
-
-/* Vision Section */
-.vision {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.vision h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.vision p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Weekend Offer Section */
-.offer {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.offer h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.offer p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes
-
-
-
-
-
-/* ===== Home Page Styling ===== */
-
-/* Vision Section */
-.vision {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.vision h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.vision p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Weekend Offer Section */
-.offer {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.offer h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.offer p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes
-
-
-
-
-
-/* ===== Home Page Styling ===== */
-
-/* Vision Section */
-.vision {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.vision h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.vision p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Weekend Offer Section */
-.offer {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.offer h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.offer p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
-
-
-
-
-
-
-
-
-
-.avatar img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 10px;
-  border: 2px solid #d0eaff;
-  background-color: #f4faff;
-}
-
-/* تعديل  */
-
-
-/* ===== Home Page Styling ===== */
-/* ===== Light Blue Section Style (Vision + Offers) ===== */
 .light-section {
-  background-color: #e6f4ff;        /* سماوي فاتح ناعم */
-  text-align: center;               /* النص بالمنتصف */
-  border-radius: 10px;              /* زوايا ناعمة */
-  padding: 50px 20px;               /* مساحة مريحة */
-  margin: 40px auto;                /* مسافة بين الأقسام */
-  width: 90%;
-  max-width: 900px;
+  background-color:#e6f4ff;
+  text-align:center;
+  border-radius:10px;
+  padding:50px 20px;
+  margin:40px auto;
+  width:90%;
+  max-width:900px;
 }
-
-/* ===== تنسيق النصوص ===== */
 .light-section h2 {
-  font-size: 2em;
-  color: #0d3b66;
-  margin-bottom: 15px;
-  font-weight: 800;
+  font-size:2em;
+  color:#0d3b66;
+  margin-bottom:15px;
+  font-weight:800;
 }
-
 .light-section p {
-  color: #333;
-  font-size: 1.05em;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;   /* يخلي النص نفسه بالنص */
+  color:#333;
+  font-size:1.05em;
+  line-height:1.6;
+  max-width:700px;
+  margin:0 auto;
 }
-
 .offer-box h3 {
-  font-size: 1.3em;
-  color: #222;
-  margin-bottom: 8px;
+  font-size:1.3em;
+  color:#222;
+  margin-bottom:8px;
 }
-
-
 
 /* Services Section (Home) */
 .services-home {
-    text-align: center;
-    padding: 70px 20px;
+  text-align:center;
+  padding:70px 20px;
 }
-
 .services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
+  font-size:2em;
+  color:#333;
+  margin-bottom:40px;
 }
-
 .services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:25px;
 }
-
 .service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  background-color:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  width:280px;
+  padding:25px;
+  transition:all 0.3s ease;
+  cursor:pointer;
 }
-
 .service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transform:translateY(-5px);
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
-
 .service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
+  font-size:1.3em;
+  color:#222;
+  margin-bottom:10px;
 }
-
 .service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
+  font-size:1em;
+  color:#555;
+  margin-bottom:10px;
 }
-
 .price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
+  font-weight:bold;
+  color:#0077cc;
+  font-size:1.1em;
 }
 
 /* Reviews Section */
 .reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
+  background-color:#fafafa;
+  text-align:center;
+  padding:70px 20px;
 }
-
 .reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
+  font-size:2em;
+  color:#333;
+  margin-bottom:40px;
 }
-
 .reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:25px;
 }
-
 .review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
+  background-color:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  width:280px;
+  padding:20px;
+  transition:all 0.3s ease;
 }
-
 .review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform:scale(1.02);
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
-
 .review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
+  font-size:1.2em;
+  color:#222;
+  margin-bottom:10px;
 }
-
 .review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
+  font-size:1em;
+  color:#555;
+  margin-bottom:10px;
 }
-
 .review span {
-    color: #ffb400;
-    font-size: 1.2em;
+  color:#ffb400;
+  font-size:1.2em;
 }
-
-/* ===== End of Home Page Styling ===== */
 
 /* ===== User Icon in Reviews ===== */
 .user-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 10px auto; /* يجعل الصورة في المنتصف */
-    object-fit: cover;
-    border: 2px solid #ccc;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:block;
+  margin:0 auto 10px auto;
+  object-fit:cover;
+  border:2px solid #ccc;
 }
 
 /* ===== Services Page Styling ===== */
-
 .services-page {
-    text-align: center;
-    padding: 70px 20px;
+  text-align:center;
+  padding:70px 20px;
 }
-
 .services-page h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
+  font-size:2em;
+  color:#333;
+  margin-bottom:40px;
 }
-
 .services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:25px;
 }
-
 .service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
+  background-color:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  width:280px;
+  padding:20px;
+  transition:all 0.3s ease;
 }
-
 .service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform:translateY(-5px);
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
-
 .service-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;      /* يجعل الصورة تغطي المساحة بدون تمدد مشوّه */
-    border-radius: 8px;
-    margin-bottom: 15px;
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:15px;
 }
-
 .service-box h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
+  font-size:1.3em;
+  color:#222;
+  margin-bottom:10px;
 }
-
 .service-box p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 8px;
+  font-size:1em;
+  color:#555;
+  margin-bottom:8px;
 }
-
 .service-box .price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
+  font-weight:bold;
+  color:#0077cc;
+  font-size:1.1em;
 }
-
-/* ===== End of Services Page Styling ===== */
-
-/* تعديل المسافة بين العنوان وصندوق الفرز (Sort by) */
 .services-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px; /* يضيف فراغ بين العنوان وبطاقات الخدمات */
-  padding: 0 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+  padding:0 20px;
 }
-
 .sort-box {
-  margin-top: 10px; /* يبعد قائمة Sort شوي عن العنوان */
+  margin-top:10px;
 }
-
 .sort-box select {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding:5px 10px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+.services-page .sort-box {
+  margin-top:-8px;
+  margin-bottom:16px;
+}
+.services-page .services-container {
+  margin-top:8px;
 }
 
-/* Services page: raise the Sort by a bit and add gap below it */
-.services-page .sort-box{
-  margin-top: -8px;   /* يرفعه شوي لفوق */
-  margin-bottom: 16px;/* يضيف فراغ تحته عشان ما يلتصق بالكروت */
-}
-
-/* تأكد من وجود مسافة بسيطة فوق شبكة الكروت */
-.services-page .services-container{
-  margin-top: 8px;
-}
-
-/* ===== Hover Effect for Service Description ===== */
-
-
-/* ===== Featured Services Section (Home Page) ===== */
-.services-home {
-  text-align: center;
-  padding: 70px 20px;
-}
-
-.services-home h2 {
-  font-size: 2em;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-.services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.service-box {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 280px;
-  padding: 25px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.service-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.service-info h3 {
-  font-size: 1.3em;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.short-desc {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 8px;
-}
-
-/* الوصف الإضافي المخفي */
+/* Hover effect */
 .extra-desc {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background-color: #f0f8ff;
-  border-left: 4px solid #1e90ff;
-  padding: 0 10px;
-  border-radius: 8px;
+  opacity:0;
+  max-height:0;
+  overflow:hidden;
+  transition:all 0.3s ease;
+  background-color:#f0f8ff;
+  border-left:4px solid #1e90ff;
+  padding:0 10px;
+  border-radius:8px;
 }
-
 .service-box:hover .extra-desc {
-  opacity: 1;
-  max-height: 200px;
-  margin-top: 6px;
-}
-
-
-/* ===== Services Section (Home Page) ===== */
-.services-home {
-  text-align: center;
-  padding: 70px 20px;
-}
-
-.services-home h2 {
-  font-size: 2em;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-.services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.service-box {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 280px;
-  padding: 25px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.service-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.service-info h3 {
-  font-size: 1.3em;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-/* الروابط داخل الخدمات */
-.service-info a {
-  color: inherit;             /* نفس لون النص */
-  text-decoration: none;      /* بدون خط تحت */
-}
-
-.service-info a:hover {
-  color: #1e90ff;             /* لون بسيط عند المرور */
-}
-
-.short-desc {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 8px;
-}
-
-/* الوصف الإضافي المخفي */
-.extra-desc {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background-color: #f0f8ff;
-  border-left: 4px solid #1e90ff;
-  padding: 0 10px;
-  border-radius: 8px;
-}
-
-.service-box:hover .extra-desc {
-  opacity: 1;
-  max-height: 200px;
-  margin-top: 6px;
+  opacity:1;
+  max-height:200px;
+  margin-top:6px;
 }
 
 /* ===== Services Page Title Box ===== */
 .services-header-box {
-  background-color: #e6f4ff;      /* خلفية سماوية ناعمة */
-  border: 1px solid #b3ddff;      /* حدود فاتحة */
-  border-radius: 10px;            /* زوايا ناعمة */
-  padding: 20px;
-  margin: 40px auto 30px;
-  text-align: center;             /* العنوان بالنص */
-  width: 90%;
-  max-width: 900px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);  /* ظل خفيف */
+  background-color:#e6f4ff;
+  border:1px solid #b3ddff;
+  border-radius:10px;
+  padding:20px;
+  margin:40px auto 30px;
+  text-align:center;
+  width:90%;
+  max-width:900px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
-
 .services-header-box h2 {
-  font-size: 2em;
-  color: #0d3b66;
-  font-weight: 800;
-  margin: 0;
+  font-size:2em;
+  color:#0d3b66;
+  font-weight:800;
+  margin:0;
 }
