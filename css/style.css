@@ -1,0 +1,226 @@
+/* Reset بسيط */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height:1.6; color:#253046; background:#f7f9fc;
+}
+img{max-width:100%; display:block}
+
+/* الحاوية العامة */
+.container{width:min(1150px, 92%); margin:auto}
+
+/* ====== الهيدر و الشعار و النافبار (Flexbox) ====== */
+
+header{
+  background:#fff; border-bottom:1px solid #e6e9ef;
+  position:sticky; top:0; z-index:10;
+}
+.header-row{display:flex; align-items:center; gap:18px; padding:14px 0}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+.brand img{width:100px; height:100px; object-fit:contain}
+.brand .title{font-weight:800; font-size:1.75rem; color:#0f2741}
+
+nav{margin-left:auto}
+.nav{display:flex; gap:28px; list-style:none}
+.nav a{
+  text-decoration:none; color:#0f2741; padding:10px 6px; border-bottom:2px solid transparent;
+}
+.nav a.active, .nav a:hover{border-color:#43b3ff; color:#177bd1}
+
+/* ====== أقسام عامة ====== */
+.page-header{
+  text-align:center; padding:26px 0 10px;
+}
+.page-header h1{font-size:1.7rem; font-weight:800}
+.breadcrumbs{
+  font-size:.9rem; color:#6b7280; margin:8px auto 20px; text-align:left;
+}
+.breadcrumbs a{color:#177bd1; text-decoration:none}
+.card{
+  background:#fff; border:1px solid #e6e9ef; border-radius:14px; padding:20px;
+}
+
+/* ====== فوتر ====== */
+footer{
+  margin-top:40px; background:#e9f4ff; border-top:1px solid #d5e8ff;
+}
+.footer-inner{display:flex; gap:20px; align-items:center; justify-content: flex-start; padding:22px 0} /* CHANGED */
+.footer-col{display:flex; flex-direction: column; justify-content: flex-end;  } /*changed*/ 
+.footer-col h4{margin-bottom:8px}
+.copy{font-size:.9rem; color:#667085}
+
+/* ====== الصفحة الرئيسية (خدمات + مراجعات) ====== */
+.hero{
+  background:#e9f4ff; border:1px solid #d5e8ff; border-radius:16px;
+  padding:26px; text-align:center; margin-bottom:22px;
+}
+.services-grid{
+  display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
+}
+.service-card{
+  width:260px; background:#fff; border:1px solid #e6e9ef; border-radius:14px; overflow:hidden;
+  transition:transform .2s ease;
+}
+.service-card:hover{transform:translateY(-4px)}
+.service-card .thumb{background:#cfe9ff; height:140px; display:flex; align-items:center; justify-content:center}
+.service-card .content{padding:14px}
+.btn{
+  display:inline-block; border:1px solid #1c7ed6; color:#fff; background:#1c7ed6;
+  padding:8px 14px; border-radius:10px; text-decoration:none; cursor:pointer;
+}
+.btn.outline{background:#fff; color:#1c7ed6}
+.btn.gray{background:#e5e7eb; color:#374151; border-color:#e5e7eb}
+
+/* ====== فورمات عامة ====== */
+.form-grid{
+  display:grid; gap:14px;
+}
+.form-2{grid-template-columns:1fr 1fr}
+.form-3{grid-template-columns:1fr 1fr 1fr}
+label{font-weight:600; display:block; margin-bottom:6px}
+input[type="text"], input[type="email"], input[type="date"], input[type="file"],
+textarea, select{
+  width:100%; background:#fff; border:1px solid #d1d5db; border-radius:10px;
+  padding:10px 12px; outline:none;
+}
+textarea{min-height:110px; resize:vertical}
+
+/* ====== جدول بروفايل الموظف ====== */
+.profile-table{
+  width:100%; border-collapse:collapse; background:#fff; border:1px solid #e6e9ef; border-radius:12px; overflow:hidden;
+}
+.profile-table th, .profile-table td{
+  border:1px solid #e6e9ef; padding:12px; vertical-align:top;
+}
+.profile-table th{background:#f3f6fb; text-align:left}
+.profile-photo{width:160px; height:120px; background:#dbeafe; display:flex; align-items:center; justify-content:center}
+
+/* ====== داشبوردات و روابط (Flexbox) ====== */
+.tiles{display:flex; gap:16px; flex-wrap:wrap}
+.tile{
+  flex:1 1 220px; text-align:center; background:#fff; border:1px solid #e6e9ef; border-radius:14px; padding:18px;
+}
+.actions{display:flex; gap:16px; flex-wrap:wrap; margin:16px 0}
+.action{
+  flex:1 1 320px; background:#fff; border:2px dashed #d1e7ff; border-radius:14px; padding:24px; text-align:center;
+}
+
+/* ====== قائمة الخدمات في Services ====== */
+.sort-box{margin-left:auto; width:240px}
+.cards-row{display:flex; gap:20px; flex-wrap:wrap}
+
+/* ====== إدارة الفريق ====== */
+.staff-list{display:grid; gap:12px}
+.staff-item{
+  display:grid; grid-template-columns: 36px 56px 1fr; align-items:center;
+  gap:12px; background:#fff; border:1px solid #e6e9ef; border-radius:12px; padding:10px;
+}
+
+/* عناصر زخرفية بسيطة مكان الأيقونات */
+.icon-placeholder{
+  width:40px; height:40px; border-radius:50%; background:#cfe9ff; display:inline-block;
+}
+
+/* أزرار أسفل الفورم */
+.form-actions{display:flex; gap:12px; justify-content:flex-end; margin-top:10px}
+/* ===== About Us: hero blue box ===== */
+.about-hero{
+  background:#f0f7ff;            /* أزرق فاتح للصندوق */
+  border:1px solid #dbe7f3;
+  border-radius:12px;
+  padding:18px 16px;
+  text-align:center;
+  margin:24px 0 28px;
+}
+.about-hero h2{ margin:0 0 6px 0; }
+.about-hero .hero-sub{ margin:0; opacity:.85; }
+
+/* ===== Team grid (4 بطاقات) ===== */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(220px,1fr));
+  gap:22px;
+  justify-items:center;
+}
+@media (max-width:1000px){ .team-grid{ grid-template-columns:repeat(2, minmax(220px,1fr)); } }
+@media (max-width:560px){  .team-grid{ grid-template-columns:1fr; } }
+
+.member-card{
+  width:240px;
+  border:1px solid #cfd6e0;
+  border-radius:10px;
+  padding:18px 16px;
+  background:#fff;
+  text-align:center;              /* كل شيء بالنص */
+}
+.avatar{
+  width:104px; height:104px;
+  border-radius:50%;
+  margin:0 auto 10px auto;
+  border:1px dashed #a8b5c3;      /* مكان الصورة فارغ */
+  background:transparent;
+}
+.member-name{ margin:6px 0 2px; font-weight:700; }
+.member-title, .member-email{ margin:4px 0; }
+
+/* توحيد لون رابط الاسم (حتى بعد الزيارة ما يتغير) */
+.member-name a:link,
+.member-name a:visited,
+.member-name a:hover,
+.member-name a:active{
+  color:#1e90ff;
+  text-decoration:none;
+}
+
+/* ===== CTA box أطول ومركّز ===== */
+.cta-box{
+  max-width:760px;
+  margin:28px auto 60px;
+  background:#f8fbff;
+  border:2px solid #1e90ff;
+  border-radius:14px;
+  padding:28px 22px;              /* أطول */
+  text-align:center;
+}
+.cta-box h3{ margin:0 0 10px 0; }
+.cta-text{
+  max-width:620px;
+  margin:0 auto 16px;             /* النص بالنص */
+  line-height:1.6;
+}
+.cta-actions{ display:flex; justify-content:center; }
+.btn{
+  background:#1e90ff;
+  color:#fff;
+  padding:10px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+}
+.btn:hover{ background:#1177cc; }
+/* === نفس الخط المستخدم في عناوين الصفحات (مثل Service) === */
+.about-hero h2,
+.cta-box h3 {
+  font-family: inherit;   /* يستخدم نفس الخط العام للموقع */
+  font-weight: 800;       /* نفس السماكة مثل كلمة Service */
+  font-size: 28px;        /* نفس الحجم تقريبي */
+  color: #000;            /* لون أسود غامق مثل العنوان */
+  text-align: center;
+}
+
+header{
+  /* correct relative path from css/style.css -> ../images */
+  background-image: url("../images/bubbles.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 120px;
+  /* don't set opacity on the whole header/footer */
+  /* background-attachment: fixed;  <-- optional; avoid on mobile */
+}
+
+
+/*if you also need a background color, combine it (won’t erase the image) */
+header{ background-color:#fff; }
+
