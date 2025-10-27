@@ -230,7 +230,167 @@ header{ background-color:#fff; }
 .profile-edu ul ul{margin-top:4px;list-style:circle}
 /*  تعديلك*/
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+
+
+
+
+
+/* ===== Home Page Styling ===== */
+
+/* Vision Section */
+.vision {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.vision h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.vision p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Weekend Offer Section */
+.offer {
+    background-color: #e3f2fd;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+}
+
+.offer h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.offer p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Services Section (Home) */
+.services-home {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.services-home h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.service-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-info h3 {
+    font-size: 1.3em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.service-info p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 1.1em;
+}
+
+/* Reviews Section */
+.reviews {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.reviews h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.review {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review h3 {
+    font-size: 1.2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.review span {
+    color: #ffb400;
+    font-size: 1.2em;
+}
+
+/* ===== End of Home Page Styling ===== */
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
 
 
 
