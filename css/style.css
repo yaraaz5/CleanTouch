@@ -148,6 +148,43 @@ textarea{min-height:110px; resize:vertical}
 }
 
 
+
+/* Customer dashboard icons toto <3 */
+.action {
+  display: flex;
+  flex-direction: column;   /* stack icon over text */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;                 /* space between icon & text */
+  text-decoration: none;
+  color: #0f2741;
+  transition: transform 0.2s ease;
+}
+
+.action:hover {
+  transform: translateY(-4px);
+}
+
+.action-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* optional: specific colors if you like */
+.request-link .action-icon {
+  background-color: #e9f4ff;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.rate-link .action-icon {
+  background-color: #fff5d9;
+  border-radius: 50%;
+  padding: 10px;
+}
+
 /* أزرار أسفل الفورم */
 .form-actions{display:flex; gap:12px; justify-content:flex-end; margin-top:10px}
 
