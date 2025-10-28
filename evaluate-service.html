@@ -30,8 +30,9 @@
         <select>
           <option>— Choose —</option>
           <option>Dry Cleaning</option>
-          <option>Ironing</option> <!-- ddddddd-->
-          <option>Stain Removal</option>
+          <option>Ironing</option> 
+          <option>Washing</option>
+		  <option>Folding Clothes Professionally</option>
         </select>
       </label>
 
@@ -39,17 +40,21 @@
         <input type="text">
       </label>
 
-      <label>Rating
-        <!-- نجوم شكلية (بدون JS) -->
-        <input type="text" value="★★★★☆" readonly>
-      </label>
+    <label>Rating</label>
+	<div class="rating">
+		<input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+		<input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+		<input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+		<input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+		<input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+	</div>
 
       <label>Feedback
         <textarea></textarea>
       </label>
 
       <div class="form-actions">
-        <button type="reset" class="btn gray">Cancel</button>
+        <button type="reset" class="btn gray"><a href="customer-dashboard.html">Cancel</button>
         <button type="submit" class="btn" disabled>Submit</button>
       </div>
     </form>
@@ -58,8 +63,8 @@
 
 <footer>
   <div class="container footer-inner">
-    <div class="footer-col"><img src="images/logo.png" alt="logo" style="width:150px; height:150px;" ></div>
-	<div class="footer-col"><h4>Contact us</h4><p>Simply dummy text of the printing</p><p class="copy">©Copyright</p></div>
+    <div class="footer-col"><img src="images/logo.png" alt="logo" class="footer-logo"></div>
+	<div class="footer-col"><h4>Contact us</h4><p>Making laundry day effortless. Book, clean, and relax with CleanTouch.</p><p class="copy">©2025 CleanTouch</p></div>
     <div class="footer-col"><div class="icon-placeholder"><img src="images/facebook.png" alt=""></div></div>
     <div class="footer-col"><div class="icon-placeholder"><img src="images/instagram.png" alt=""></div></div>
     <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>

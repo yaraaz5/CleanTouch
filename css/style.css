@@ -71,6 +71,8 @@ footer{
 }
 .btn.outline{background:#fff; color:#1c7ed6}
 .btn.gray{background:#e5e7eb; color:#374151; border-color:#e5e7eb}
+.btn.gray a{text-decoration:none;}
+.btn.gray a:visited{color:#374151}
 
 /* ====== فورمات عامة ====== */
 .form-grid{
@@ -118,9 +120,33 @@ textarea{min-height:110px; resize:vertical}
 }
 
 /* عناصر زخرفية بسيطة مكان الأيقونات */
-.icon-placeholder{
-  width:40px; height:40px; border-radius:50%; background:#cfe9ff; display:inline-block;
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #cfe9ff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%; /* adjusts image size inside the circle */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
 }
+
+.icon-placeholder2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #cfe9ff;
+  background-image: url("../images/CustIcon.png"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%; /* adjusts image size inside the circle */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 
 /* أزرار أسفل الفورم */
 .form-actions{display:flex; gap:12px; justify-content:flex-end; margin-top:10px}
@@ -1086,3 +1112,82 @@ header{
   font-weight:800;
   margin:0;
 }
+
+
+
+
+
+
+
+/*TAAAAAAAAAAAAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAA*/
+/* Tala's Request a Service page: fix time input box (it used defaults of brower which doesn't look pleasant */
+.time-box {
+  width:100%;
+  background:#fff;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  padding:10px 12px;
+  outline:none;
+  font-family:inherit;
+  font-size:1rem;
+
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  box-sizing:border-box;
+}
+
+.time-box:focus {
+  border-color:#1e90ff;
+  box-shadow:0 0 3px rgba(30,144,255,0.4);
+}
+
+/* === CleanTouch Footer Logo (Tala’s Page) === (CHOICE NUMBER 1) */
+.footer-logo {
+  width: 100px;
+  height: auto;                /* keeps original proportions */
+  object-fit: contain;         /* prevents stretching or cropping */
+  display: block;
+}
+
+/* Make it flexible on small screens */
+@media (max-width: 600px) {
+  .footer-logo {
+    width: 80px;               /* smaller on phones */
+    margin: 0 auto;            /* center it */
+  }
+}
+
+/* === CleanTouch: Star Rating (Tala's Service Evaluation page) === */
+.rating {
+  display: inline-flex;
+  flex-direction: row;        /* normal left-to-right order */
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 28px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Correct hover: light up from left to right */
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ffd700;
+}
+
+/* Keep selected stars yellow */
+.rating input:checked ~ label {
+  color: #ffd700;
+}
+
+/* Reverse visual order without flipping hover direction 
+.rating {
+  direction: ltr;             ensure left alignment  */
