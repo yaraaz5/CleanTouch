@@ -147,6 +147,21 @@ textarea{min-height:110px; resize:vertical}
   margin-right: 10px;
 }
 
+.icon-placeholder3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #cfe9ff;
+  background-image: url("../images/SETTINGSS.png"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%; /* adjusts image size inside the circle */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+
 
 
 /* Customer dashboard icons toto <3 */
@@ -171,6 +186,14 @@ textarea{min-height:110px; resize:vertical}
   height: 50px;
   object-fit: contain;
 }
+
+/*najla*/
+.team-icon{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 
 /* optional: specific colors if you like */
 .request-link .action-icon {
@@ -207,6 +230,13 @@ textarea{min-height:110px; resize:vertical}
   background-color: #fee2e2; /* light red/pink */
   color: #991b1b;            /* dark red text */
 }
+/*najla*/
+.Prequest-link .action-icon {
+  background-color: #e9f4ff;
+  border-radius: 50%;
+  padding: 10px;
+}
+
 
 
 /* أزرار أسفل الفورم */
