@@ -128,7 +128,7 @@ textarea{min-height:110px; resize:vertical}
   background-color: #cfe9ff;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80%; /* adjusts image size inside the circle */
+  background-size: 80%; 
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
@@ -1278,3 +1278,15 @@ header{
 /* Reverse visual order without flipping hover direction 
 .rating {
   direction: ltr;             ensure left alignment  */
+  
+  /* --- Sticky footer for all pages --- */
+html, body { height: 100%; }
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column; /* header → main → footer */
+}
+main{ flex:1 0 auto; }   /* خليه ياخذ المساحة الفاضية */
+footer{ margin-top:auto; } /* يدزّ الفوتر لتحت */
+  
+  
