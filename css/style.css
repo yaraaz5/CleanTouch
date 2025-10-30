@@ -88,7 +88,7 @@ textarea, select{
 }
 textarea{min-height:110px; resize:vertical}
 
-/* ====== جدول بروفايل الموظف ====== */
+/*تعديل يارا  */
 .profile-table{
   width:100%; border-collapse:collapse; background:#fff; border:1px solid #e6e9ef; border-radius:12px; overflow:hidden;
 }
@@ -97,6 +97,7 @@ textarea{min-height:110px; resize:vertical}
 }
 .profile-table th{background:#f3f6fb; text-align:left}
 .profile-photo{width:160px; height:120px; background:#dbeafe; display:flex; align-items:center; justify-content:center}
+/*تعديل يارا نهاية  */
 
 /* ====== داشبوردات و روابط (Flexbox) ====== */
 .tiles{display:flex; gap:16px; flex-wrap:wrap}
@@ -189,8 +190,8 @@ textarea{min-height:110px; resize:vertical}
 
 /*najla*/
 .team-icon{
-  width: 20px;
-  height: 20px;
+  width: 220px;
+  height: 65px;
   object-fit: contain;
 }
 
@@ -239,10 +240,10 @@ textarea{min-height:110px; resize:vertical}
 
 
 
-/* أزرار أسفل الفورم */
+/*  يأزرار أسفل الفورم يارا */
 .form-actions{display:flex; gap:12px; justify-content:flex-end; margin-top:10px}
 
-/* ===== About Us: hero blue box ===== */
+/* تعديل يارا */
 .about-hero{
   background:#f0f7ff;
   border:1px solid #dbe7f3;
@@ -254,7 +255,7 @@ textarea{min-height:110px; resize:vertical}
 .about-hero h2{margin:0 0 6px 0;}
 .about-hero .hero-sub{margin:0; opacity:.85;}
 
-/* ===== Team grid (4 بطاقات) ===== */
+/* تعديل يارا */
 .team-grid{
   display:grid;
   grid-template-columns:repeat(4, minmax(220px,1fr));
@@ -288,7 +289,7 @@ textarea{min-height:110px; resize:vertical}
   text-decoration:none;
 }
 
-/* ===== CTA box ===== */
+/* تعديل يارا */
 .cta-box{
   max-width:760px;
   margin:28px auto 60px;
@@ -314,7 +315,7 @@ textarea{min-height:110px; resize:vertical}
   color:#000;
   text-align:center;
 }
-
+/* تعديل يارا فوق */
 header{
   background-image:url("../images/bubbles.png");
   background-repeat:no-repeat;
@@ -322,18 +323,12 @@ header{
   background-size:120px;
   background-color:#fff;
 }
-
+/*تعديل جدول يارا */
 .profile-skills ul{margin:0;padding-left:18px;list-style:disc}
 .profile-skills ul ul{margin-top:4px;list-style:circle}
 .profile-edu ul{margin:0;padding-left:18px;list-style:none}
 .profile-edu ul ul{margin-top:4px;list-style:circle}
-/*  تعديلك*/
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
-=======
+/*نهايد تعديل يارا*/
 
 
 
