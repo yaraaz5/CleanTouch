@@ -1,71 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manage Staff Members — Clean Touch</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<header>
-  <div class="container header-row">
-    <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span class="title">Clean touch</span></a>
-    <nav><ul class="nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="customer-dashboard.html">Customer Dashboard</a></li>
-      <li><a class="active" href="provider-dashboard.html">Provider Dashboard</a></li>
-    </ul></nav>
-  </div>
-</header>
-
-<main class="container">
-  <p class="breadcrumbs"><a href="provider-dashboard.html">Provider Dashboard</a> › Manage Staff Members</p>
-
-  <section class="card">
-    <div style="display:flex; gap:12px; justify-content:flex-end; margin-bottom:10px">
-      <button class="btn gray" type="button">Delete Selected (0)</button>
-      <a class="btn" href="add-staff.html">+ Add New Staff</a>
+  <header>
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="">
+        <span class="title">Clean touch</span>
+      </a>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="customer-dashboard.html">Customer Dashboard</a></li>
+          <li><a class="active" href="provider-dashboard.html">Provider Dashboard</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class="staff-list">
-      <!-- عنصر موظف -->
-      <label class="staff-item">
-        <input type="checkbox">
-        <div> <img src="images/emp1.png" alt="Sarah Malik" width=100px; height=56px;> </div>
-        <div>Sarah Malik</div>
-      </label>
+  <main class="container">
+    <p class="breadcrumbs">
+      <a href="provider-dashboard.html">Provider Dashboard</a> › Manage Staff Members
+    </p>
 
-      <label class="staff-item">
-        <input type="checkbox">
-        <div><img src="images/emp4.png" alt="Ahmed Ali" width=100px; height=56px;></div>
-        <div>Ahmed Ali</div>
-      </label>
+    <section class="card">
+      <!-- مهم: نخلي التغليف Flex عمودي عشان نقدر نرفع التولبار فوق بصريًا -->
+      <form action="#" method="post" class="delete-form">
+        <div class="staff-wrap">
 
-      <label class="staff-item">
-        <input type="checkbox">
-        <div><img src="images/emp2.png" alt="Sami Saad" width=100px; height=56px;></div>
-        <div>Sami Saad</div>
-      </label>
-	  
-	  <label class="staff-item">
-        <input type="checkbox">
-        <div><img src="images/emp3.png" alt="Layla Yasser"  width=100px; height=56px;></div>
-        <div>Layla Yasser</div>
-      </label>
+          <!-- قائمة الموظفين أولًا في DOM (العداد يعتمد على هذا الترتيب) -->
+          <div class="staff-list">
+            <label class="staff-item">
+              <input class="staff-check" type="checkbox" name="delete_ids[]" value="1">
+              <div><img src="images/emp1.png" alt="Sarah Malik" width="100" height="56"></div>
+              <div>Sarah Malik</div>
+            </label>
+
+            <label class="staff-item">
+              <input class="staff-check" type="checkbox" name="delete_ids[]" value="2">
+              <div><img src="images/emp4.png" alt="Ahmed Ali" width="100" height="56"></div>
+              <div>Ahmed Ali</div>
+            </label>
+
+            <label class="staff-item">
+              <input class="staff-check" type="checkbox" name="delete_ids[]" value="3">
+              <div><img src="images/emp2.png" alt="Sami Saad" width="100" height="56"></div>
+              <div>Sami Saad</div>
+            </label>
+
+            <label class="staff-item">
+              <input class="staff-check" type="checkbox" name="delete_ids[]" value="4">
+              <div><img src="images/emp3.png" alt="Layla Yasser" width="100" height="56"></div>
+              <div>Layla Yasser</div>
+            </label>
+          </div>
+
+          <!-- شريط الأزرار العلوية: مكانه في DOM بعد القائمة لسلامة العداد،
+               لكن نرفعه فوق بصريًا بواسطة order:-1 -->
+          <div class="ms-toolbar">
+            <button class="btn gray delete-selected" type="button">
+              Delete Selected 
+            </button>
+            <a class="btn" href="add-staff.html">+ Add New Staff</a>
+          </div>
+
+          <!-- أزرار تظهر فقط عند وجود تحديد -->
+          <div class="form-actions ms-actions">
+            <!-- نرجّع اللون الرمادي لزر الكانسل كما طلبتي -->
+            <a class="btn gray" href="manage-staff.html">Cancel</a>
+            <!-- زر الحذف الحقيقي (Submit) حسب المتطلب -->
+            <button type="submit" name="action" value="delete" class="btn">Delete</button>
+          </div>
+
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <img src="images/logo.png" alt="logo" class="footer-logo">
+      </div>
+      <div class="footer-col">
+        <h4>Contact us</h4>
+        <p>Making laundry day effortless. Book, clean, and relax with CleanTouch.</p>
+        <p class="copy">©2025 CleanTouch</p>
+      </div>
+      <div class="footer-col"><div class="icon-placeholder"><img src="images/facebook.png" alt=""></div></div>
+      <div class="footer-col"><div class="icon-placeholder"><img src="images/instagram.png" alt=""></div></div>
+      <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
     </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <div class="footer-col"><img src="images/logo.png" alt="logo" style="width:150px; height:150px;" ></div>
-	<div class="footer-col"><h4>Contact us</h4><p>Simply dummy text of the printing</p><p class="copy">©Copyright</p></div>
-    <div class="footer-col"><div class="icon-placeholder"><img src="images/facebook.png" alt=""></div></div>
-    <div class="footer-col"><div class="icon-placeholder"><img src="images/instagram.png" alt=""></div></div>
-    <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
