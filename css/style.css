@@ -275,7 +275,6 @@ textarea{min-height:110px; resize:vertical}
 }
 .avatar{
   width:104px; height:104px;
-  border-radius:50%;
   margin:0 auto 10px auto;
   background:transparent;
 }
@@ -291,7 +290,7 @@ textarea{min-height:110px; resize:vertical}
 
 /* تعديل يارا */
 .cta-box{
-  max-width:760px;
+  max-width:1000px;
   margin:28px auto 60px;
   background:#f8fbff;
   border:2px solid #1e90ff;
@@ -304,6 +303,7 @@ textarea{min-height:110px; resize:vertical}
   max-width:620px;
   margin:0 auto 16px;
   line-height:1.6;
+  font-size:18px;
 }
 .cta-actions{display:flex; justify-content:center;}
 .btn{background:#1e90ff; color:#fff; padding:10px 24px; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block;}
@@ -315,7 +315,8 @@ textarea{min-height:110px; resize:vertical}
   color:#000;
   text-align:center;
 }
-/* تعديل يارا فوق */
+/* نهاية تعديل يارا */
+
 header{
   background-image:url("../images/bubbles.png");
   background-repeat:no-repeat;
