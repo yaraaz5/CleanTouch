@@ -175,18 +175,14 @@ textarea{min-height:110px; resize:vertical}
   object-fit: contain;
 }
 
-/*najla*/
+/*=============najla=============*/
+/* ايكون الستاف*/
 .team-icon{
   width: 200px;
   height: 60px;
   object-fit: contain;
 }
-.Prequest-link .action-icon {
-  background-color: #e9f4ff;
-  border-radius: 50%;
-  padding: 10px;
-}
-
+/*ايكون الاعدادات*/
 .icon-placeholder3 {
   width: 40px;
   height: 40px;
@@ -200,15 +196,14 @@ textarea{min-height:110px; resize:vertical}
   vertical-align: middle;
   margin-right: 10px;
 }
- /* ===================== najla — manage-staff (final) ===================== */
+
 /* تغليف عام: نخليه Flex عمودي عشان نغيّر الترتيب بصريًا */
 .staff-wrap{
   display:flex;
   flex-direction:column;
 }
 
-/* التولبار العلوي (Delete Selected / + Add New Staff)
-   مكانه في DOM بعد القائمة (للكاونتر) لكن نرفعه فوق بصريًا */
+/* التولبار العلوي (Delete Selected / + Add New Staff)*/
 .ms-toolbar{
   display:flex;
   gap:12px;
@@ -217,6 +212,7 @@ textarea{min-height:110px; resize:vertical}
   order:-1; /* يضعه أعلى القائمة بصريًا */
 }
 
+
 /* الأزرار المؤقتة (Cancel/Delete) تظهر فقط عند وجود تحديد */
 .ms-actions{
   display:none;
@@ -224,17 +220,19 @@ textarea{min-height:110px; resize:vertical}
   justify-content:flex-end;
   margin-top:12px;
 }
+
+
 /* إظهار الأزرار إذا وُجد تشيكبوكس محدد داخل البطاقة */
 .card:has(.staff-check:checked) .ms-actions{
   display:flex;
 }
 
-/* العداد: Delete Selected (N)
-   لازم يكون زر "Delete Selected" بعد قائمة التشيكبوكس في DOM */
+/*COUNTER*/
 .delete-form{ counter-reset: staffCount; }
 .delete-form .staff-check:checked{ counter-increment: staffCount; }
 /* نربطه بزر الديليت سيلكتد فقط */
 .delete-selected::after{ content: " (" counter(staffCount) ")"; }
+/*COUNTER*/
 
 /* تحسين عرض صور الموظفين */
 .staff-item img{
@@ -242,9 +240,9 @@ textarea{min-height:110px; resize:vertical}
   height:56px;
   object-fit:cover;
 }
-/* ======================================================================= */
 
-/*najla end*/
+
+/*==============najla end=================*/
 
 /* optional: specific colors if you like */
 .request-link .action-icon {
