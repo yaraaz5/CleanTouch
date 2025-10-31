@@ -16,7 +16,7 @@ header{
   background:#fff; border-bottom:1px solid #e6e9ef;
   position:sticky; top:0; z-index:10;
 }
-.header-row{display:flex; align-items:center; gap:18px; padding:14px 0}
+.header-row{display:flex; align-items:center; gap:18px; padding:14px; flex-wrap: wrap}
 .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
 .brand img{width:100px; height:100px; object-fit:contain}
 .brand .title{font-weight:800; font-size:1.75rem; color:#0f2741}
@@ -40,6 +40,8 @@ nav{margin-left:auto}
 .card{
   background:#fff; border:1px solid #e6e9ef; border-radius:14px; padding:20px;
 }
+
+
 
 footer{
   margin-top:40px; background:#e9f4ff; border-top:1px solid #d5e8ff;
@@ -766,7 +768,7 @@ header{
   font-size:1rem;
 
   appearance:none;
-  -webkit-appearance:none;
+  -webkit-appearance:none; 
   -moz-appearance:none;
   box-sizing:border-box;
 }
