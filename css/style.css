@@ -50,29 +50,7 @@ footer{
 .footer-col h4{margin-bottom:8px}
 .copy{font-size:.9rem; color:#667085}
 
-/* ====== الصفحة الرئيسية (خدمات + مراجعات) ====== */
-.hero{
-  background:#e9f4ff; border:1px solid #d5e8ff; border-radius:16px;
-  padding:26px; text-align:center; margin-bottom:22px;
-}
-.services-grid{
-  display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
-}
-.service-card{
-  width:260px; background:#fff; border:1px solid #e6e9ef; border-radius:14px; overflow:hidden;
-  transition:transform .2s ease;
-}
-.service-card:hover{transform:translateY(-4px)}
-.service-card .thumb{background:#cfe9ff; height:140px; display:flex; align-items:center; justify-content:center}
-.service-card .content{padding:14px}
-.btn{
-  display:inline-block; border:1px solid #1c7ed6; color:#fff; background:#1c7ed6;
-  padding:8px 14px; border-radius:10px; text-decoration:none; cursor:pointer;
-}
-.btn.outline{background:#fff; color:#1c7ed6}
-.btn.gray{background:#e5e7eb; color:#374151; border-color:#e5e7eb}
-.btn.gray a{text-decoration:none;}
-.btn.gray a:visited{color:#374151}
+
 
 /* ====== فورمات عامة ====== */
 .form-grid{
@@ -377,150 +355,6 @@ header{
 
 
 
-/* ===== Home Page Styling ===== */
-
-/* Vision Section */
-.vision {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.vision h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.vision p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Weekend Offer Section */
-.offer {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.offer h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.offer p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
 
 
 
@@ -529,7 +363,6 @@ header{
 
 
 
->>>>>>> Stashed changes
 
 
 
@@ -574,434 +407,6 @@ header{
     font-size: 1.1em;
     color: #333;
 }
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes
-
-
-
-
-
-/* ===== Home Page Styling ===== */
-
-/* Vision Section */
-.vision {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.vision h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.vision p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Weekend Offer Section */
-.offer {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.offer h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.offer p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes
-
-
-
-
-
-/* ===== Home Page Styling ===== */
-
-/* Vision Section */
-.vision {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.vision h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.vision p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* Weekend Offer Section */
-.offer {
-    background-color: #e3f2fd;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.offer h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.offer p {
-    font-size: 1.1em;
-    color: #333;
-}
-
-/* Services Section (Home) */
-.services-home {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
-}
-
-/* Reviews Section */
-.reviews {
-    background-color: #fafafa;
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.reviews h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.reviews-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.review {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.review h3 {
-    font-size: 1.2em;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.review span {
-    color: #ffb400;
-    font-size: 1.2em;
-}
-
-/* ===== End of Home Page Styling ===== */
-
-
-
-
-
-
-
 
 
 /* ===== Home Page Styling ===== */
@@ -1034,50 +439,67 @@ header{
 }
 
 /* Services Section (Home) */
+
+
 .services-home {
-  text-align:center;
-  padding:70px 20px;
+  text-align: center;
+  padding: 70px 20px;
 }
 .services-home h2 {
-  font-size:2em;
-  color:#333;
-  margin-bottom:40px;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 40px;
 }
 .services-container {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 .service-box {
-  background-color:#fff;
-  border:1px solid #ddd;
-  border-radius:10px;
-  width:280px;
-  padding:25px;
-  transition:all 0.3s ease;
-  cursor:pointer;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 280px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 .service-box:hover {
-  transform:translateY(-5px);
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 .service-info h3 {
-  font-size:1.3em;
-  color:#222;
-  margin-bottom:10px;
+  font-size: 1.3em;
+  color: #222;
+  margin-bottom: 10px;
 }
 .service-info p {
-  font-size:1em;
-  color:#555;
-  margin-bottom:10px;
+  font-size: 1em;
+  color: #555;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: 0;
 }
+
 
 .price {
   font-weight:bold;
   color:#0077cc;
   font-size:1.1em;
+
+.service-box:hover .service-info p {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 8px;
+
 }
+
+
 
 /* Reviews Section */
 .reviews {
@@ -1157,7 +579,21 @@ header{
   width:280px;
   padding:20px;
   transition:all 0.3s ease;
+ 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .service-box:hover {
   transform:translateY(-5px);
   box-shadow:0 4px 15px rgba(0,0,0,0.1);
@@ -1223,6 +659,8 @@ header{
   max-height:200px;
   margin-top:6px;
 }
+
+
 
 /* ===== Services Page Title Box ===== */
 .services-header-box {
