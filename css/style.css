@@ -419,54 +419,53 @@ header{
 
 /* Services Section (Home) */
 .services-home {
-    text-align: center;
-    padding: 70px 20px;
+  text-align: center;
+  padding: 70px 20px;
 }
-
 .services-home h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 40px;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 40px;
 }
-
 .services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
-
 .service-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 280px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 280px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
-
 .service-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 .service-info h3 {
-    font-size: 1.3em;
-    color: #222;
-    margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #222;
+  margin-bottom: 10px;
 }
-
 .service-info p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
+  font-size: 1em;
+  color: #555;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: 0;
 }
-
-.price {
-    font-weight: bold;
-    color: #0077cc;
-    font-size: 1.1em;
+.service-box:hover .service-info p {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 8px;
 }
 
 /* Reviews Section */
