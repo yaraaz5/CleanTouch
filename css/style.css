@@ -181,6 +181,16 @@ textarea{min-height:110px; resize:vertical}
   height: 60px;
   object-fit: contain;
 }
+
+/* najla — Add Service Title */
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
 /*ايكون الاعدادات*/
 .icon-placeholder3 {
   width: 40px;
@@ -202,13 +212,13 @@ textarea{min-height:110px; resize:vertical}
   flex-direction:column;
 }
 
-/* التولبار العلوي (Delete Selected / + Add New Staff)*/
+/* التولبار العلوي( Add New Staff)*/
 .ms-toolbar{
   display:flex;
   gap:12px;
   justify-content:flex-end;
   margin-bottom:10px;
-  order:-1; /* يضعه أعلى القائمة بصريًا */
+  order:-1; 
 }
 
 
@@ -226,18 +236,110 @@ textarea{min-height:110px; resize:vertical}
   display:flex;
 }
 
-/*COUNTER*/
-.delete-form{ counter-reset: staffCount; }
-.delete-form .staff-check:checked{ counter-increment: staffCount; }
-/* نربطه بزر الديليت سيلكتد فقط */
-.delete-selected::after{ content: " (" counter(staffCount) ")"; }
-/*COUNTER*/
 
-/* تحسين عرض صور الموظفين */
+/*عرض صور الموظفين*/
 .staff-item img{
   width:100px;
   height:56px;
   object-fit:cover;
+}
+
+/* najla — Manage Staff Titles */
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;  
+  
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-title {
+  font-size: 20px;
+  
+   font-weight: bold;  
+  margin-bottom: 10px;
+  color: #333;
+}
+/* form layout */
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+}
+
+.add-form input[type="text"],
+.add-form input[type="email"],
+.add-form input[type="date"],
+.add-form input[type="file"],
+.add-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* صف الميلاد والخبرة */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* نستخدم كلاس داخل الـHTML بدل first/last-child */
+.dob-field {
+  flex: 0 0 220px;  /* عرض صغير لتاريخ الميلاد */
+}
+
+.expertise-field {
+  flex: 1;          /* الخبرة تاخذ باقي المساحة */
+}
+
+/* وسّعنا Skills وEducation */
+.add-form input[name="skills"],
+.add-form input[name="education"] {
+  min-height: 48px;
+  font-size: 15px;
+  padding: 12px 14px;
+}
+
+/* الأزرار أسفل الفورم */
+.add-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* حقل الصورة */
+.add-form input[type="file"] {
+  width: auto;
+  max-width: 250px;
+  padding: 4px;
+  font-size: 13px;
+}
+
+/* تصغير حجم الصوره بadd service */
+.form-grid input[type="file"] {
+  width: auto;
+  max-width: 250px;
+  padding: 4px;
+  font-size: 13px;
+}
+/* خلا العنوان فوق مربع الصورة في Add Service */
+.form-grid label {
+  display: flex;
+  flex-direction: column; /* يخلي النص فوق العنصر */
+  font-weight: 500;
+  color: #333;
 }
 
 

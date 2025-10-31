@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Staff Members — Clean Touch</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -29,45 +29,43 @@
     <p class="breadcrumbs">
       <a href="provider-dashboard.html">Provider Dashboard</a> › Manage Staff Members
     </p>
+<h1 class="page-title">Manage Staff Members</h1>
 
     <section class="card">
-      <!-- مهم: نخلي التغليف Flex عمودي عشان نقدر نرفع التولبار فوق بصريًا -->
+      <!-- Flex عمودي عشان نقدر نرفع التولبار فوق بصريًا -->
       <form action="#" method="post" class="delete-form">
         <div class="staff-wrap">
+		
+<h2 class="section-title">Staff Members</h2>
 
-          <!-- قائمة الموظفين أولًا في DOM (العداد يعتمد على هذا الترتيب) -->
           <div class="staff-list">
             <label class="staff-item">
               <input class="staff-check" type="checkbox" name="delete_ids[]" value="1">
-              <div><img src="images/emp1.png" alt="Sarah Malik" width="100" height="56"></div>
-              <div>Sarah Malik</div>
+              <span><img src="images/emp1.png" alt="Sarah Malik" width="100" height="56"></span>
+              <span>Sarah Malik</span>
             </label>
 
             <label class="staff-item">
               <input class="staff-check" type="checkbox" name="delete_ids[]" value="2">
-              <div><img src="images/emp4.png" alt="Ahmed Ali" width="100" height="56"></div>
-              <div>Ahmed Ali</div>
+              <span><img src="images/emp4.png" alt="Ahmed Ali" width="100" height="56"></span>
+              <span>Ahmed Ali</span>
             </label>
 
             <label class="staff-item">
               <input class="staff-check" type="checkbox" name="delete_ids[]" value="3">
-              <div><img src="images/emp2.png" alt="Sami Saad" width="100" height="56"></div>
-              <div>Sami Saad</div>
+              <span><img src="images/emp2.png" alt="Sami Saad" width="100" height="56"></span>
+              <span>Sami Saad</span>
             </label>
 
             <label class="staff-item">
               <input class="staff-check" type="checkbox" name="delete_ids[]" value="4">
-              <div><img src="images/emp3.png" alt="Layla Yasser" width="100" height="56"></div>
-              <div>Layla Yasser</div>
+              <span><img src="images/emp3.png" alt="Layla Yasser" width="100" height="56"></span>
+              <span>Layla Yasser</span>
             </label>
           </div>
 
-          <!-- شريط الأزرار العلوية: مكانه في DOM بعد القائمة لسلامة العداد،
-               لكن نرفعه فوق بصريًا بواسطة order:-1 -->
+         
           <div class="ms-toolbar">
-            <button class="btn gray delete-selected" type="button">
-              Delete Selected 
-            </button>
             <a class="btn" href="add-staff.html">+ Add New Staff</a>
           </div>
 
