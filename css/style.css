@@ -397,12 +397,7 @@ textarea{min-height:110px; resize:vertical}
 .about-hero .hero-sub{margin:0; opacity:.85;}
 
 /* تعديل يارا */
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(220px,1fr));
-  gap:22px;
-  justify-items:center;
-}
+
 @media (max-width:1000px){.team-grid{grid-template-columns:repeat(2, minmax(220px,1fr));}}
 @media (max-width:560px){.team-grid{grid-template-columns:1fr;}}
 
@@ -838,4 +833,30 @@ body{
 main{ flex:1 0 auto; }   
 footer{ margin-top:auto; } 
   
-  
+  /* يارا */
+.team-grid {
+  display: flex;                
+  overflow-x: scroll;           
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.team-grid::-webkit-scrollbar {
+  height: 10px;                 
+}
+
+.team-grid::-webkit-scrollbar-thumb {
+  background: #1e90ff;
+  border-radius: 5px;
+}
+
+.team-grid::-webkit-scrollbar-track {
+  background: #e6eefc;
+}
+
+.member-card {
+  flex: 0 0 calc(33.333% - 20px); 
+  min-width: 260px;
+  max-width: 300px;
+}
