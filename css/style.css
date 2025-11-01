@@ -758,19 +758,13 @@ header{
   box-shadow:0 0 3px rgba(30,144,255,0.4);
 }
 
-/* === CleanTouch Footer Logo (Tala’s Page) === (CHOICE NUMBER 1) */
+/* Footer Logo */
 .footer-logo {
   width: 100px;
   height: auto;                /* keeps original proportions */
   object-fit: contain;         /* prevents stretching or cropping */
   display: block;
 }
-
-/* Make it flexible on small screens */
-  .footer-logo {
-    width: 80px;               /* smaller on phones */
-    margin: 0 auto;            /* center it */
-  }
 
 
 /* === CleanTouch: Star Rating (Tala's Service Evaluation page) === */
