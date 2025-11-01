@@ -221,19 +221,6 @@ textarea{min-height:110px; resize:vertical}
 }
 
 
-/* الأزرار المؤقتة (Cancel/Delete) تظهر فقط عند وجود تحديد */
-.ms-actions{
-  display:none;
-  gap:12px;
-  justify-content:flex-end;
-  margin-top:12px;
-}
-
-
-/* إظهار الأزرار إذا وُجد تشيكبوكس محدد داخل البطاقة */
-.card:has(.staff-check:checked) .ms-actions{
-  display:flex;
-}
 
 
 /*عرض صور الموظفين*/
@@ -293,7 +280,7 @@ textarea{min-height:110px; resize:vertical}
   gap: 20px;
 }
 
-/* نستخدم كلاس داخل الـHTML بدل first/last-child */
+
 .dob-field {
   flex: 0 0 220px;  /* عرض صغير لتاريخ الميلاد */
 }
@@ -310,13 +297,7 @@ textarea{min-height:110px; resize:vertical}
   padding: 12px 14px;
 }
 
-/* الأزرار أسفل الفورم */
-.add-form .form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 10px;
-}
+
 
 /* حقل الصورة */
 .add-form input[type="file"] {
@@ -333,6 +314,7 @@ textarea{min-height:110px; resize:vertical}
   padding: 4px;
   font-size: 13px;
 }
+
 /* خلا العنوان فوق مربع الصورة في Add Service */
 .form-grid label {
   display: flex;
