@@ -149,7 +149,7 @@ textarea{min-height:110px; resize:vertical}
 
 
 
-/* Customer dashboard icons and more... toto <3 */
+/* Customer dashboard icons and more... tala تعديل */
 .action {
   display: flex;
   flex-direction: column;   /* stack icon over text */
@@ -326,7 +326,7 @@ textarea{min-height:110px; resize:vertical}
 
 /*==============najla end=================*/
 
-/* optional: specific colors if you like */
+/*  colors  */
 .request-link .action-icon {
   background-color: #e9f4ff;
   border-radius: 50%;
@@ -358,7 +358,7 @@ textarea{min-height:110px; resize:vertical}
 }
 
 .status.declined {
-  background-color: #fee2e2; /* light red/pink */
+  background-color: #fee2e2; /* pink */
   color: #991b1b;            /* dark red text */
 }
 
@@ -761,13 +761,13 @@ header{
 /* Footer Logo */
 .footer-logo {
   width: 100px;
-  height: auto;                /* keeps original proportions */
-  object-fit: contain;         /* prevents stretching or cropping */
+  height: auto;                /* keeps original مقاسات */
+  object-fit: contain;         /* prevents cropping */
   display: block;
 }
 
 
-/* === CleanTouch: Star Rating (Tala's Service Evaluation page) === */
+/* Star Rating (Tala's Service Evaluation page) */
 .rating {
   display: inline-flex;
   flex-direction: row;        /* normal left-to-right order */
@@ -792,7 +792,7 @@ header{
   color: #ffd700;
 }
 
-/* Keep selected stars yellow */
+/* yellow للنجوم لون*/
 .rating input:checked ~ label {
   color: #ffd700;
 }
@@ -807,6 +807,8 @@ body{
 }
 main{ flex:1 0 auto; }   
 footer{ margin-top:auto; } 
+  
+  
   
   /* يارا */
 .team-grid {
