@@ -489,7 +489,7 @@ header{
 
 
 
-/* ===== Home Page Styling ===== */
+/* صفحه الهوم*/
 .light-section {
   background-color:#e6f4ff;
   text-align:center;
@@ -518,7 +518,7 @@ header{
   margin-bottom:8px;
 }
 
-/* Services Section (Home) */
+/* السيرفس الموجوده بالهوم*/
 
 
 .services-home {
@@ -560,16 +560,16 @@ header{
   margin-bottom:10px;
 }
 
-/* ===== Hover Description Effect ===== */
+/*  الافكت حق الدسكربشن*/
 .desc {
-  opacity: 0;               /* يخفي الوصف */
+  opacity: 0;               /*يخفيه */
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .service-box:hover .desc {
-  opacity: 1;               /* يظهر الوصف عند تمرير الماوس */
+  opacity: 1;               /* يطلع لما يحط الملوس*/
   max-height: 200px;
   margin-top: 8px;
 }
@@ -583,7 +583,7 @@ header{
   font-size:1.1em;
 }
 
-/* Reviews Section */
+/* الرفيو سكشن */
 .reviews {
   background-color:#fafafa;
   text-align:center;
@@ -627,7 +627,7 @@ header{
   font-size:1.2em;
 }
 
-/* ===== User Icon in Reviews ===== */
+/* الايكون الموجوده في الرفيو*/
 .user-icon {
   width:60px;
   height:60px;
@@ -638,7 +638,7 @@ header{
   border:2px solid #ccc;
 }
 
-/* ===== Services Page Styling ===== */
+/*  صفحه السيرفس*/
 .services-page {
   text-align:center;
   padding:70px 20px;
@@ -711,7 +711,7 @@ header{
   margin-top:8px;
 }
 
-/* Hover effect */
+
 .extra-desc {
   opacity:0;
   max-height:0;
@@ -728,7 +728,7 @@ header{
   margin-top:6px;
 }
 
-/* ===== Services Page Title Box ===== */
+/* عنوان السيرفس*/
 .services-header-box {
   background-color:#e6f4ff;
   border:1px solid #b3ddff;
