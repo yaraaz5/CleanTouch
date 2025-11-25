@@ -361,3 +361,96 @@ if (document.getElementById("evaluationForm")) {
 
 
 /*------------------------------------------------------TALA-------------------------------------------------------------------*/
+
+/*------------------------------------------------------YARA-------------------------------------------------------------------*/
+// Validation for Application Form (Join Our Team)
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("applicationForm");
+  if (!form) return;
+
+  var fullNameInput = document.getElementById("fullName");
+  var dobInput      = document.getElementById("dob");
+  var emailInput    = document.getElementById("email");
+  var expertiseInput= document.getElementById("expertise");
+  var educationInput= document.getElementById("education");
+  var photoInput    = document.getElementById("photo");
+  var skillsInput   = document.getElementById("skills");
+  var reasonInput   = document.getElementById("reason");
+  var submitBtn     = document.getElementById("submitBtn");
+
+
+  function isFormValid() {
+    var fullName  = fullNameInput.value.trim();
+    var dobValue  = dobInput.value;
+    var email     = emailInput.value.trim();
+    var expertise = expertiseInput.value.trim();
+    var skills    = skillsInput.value.trim();
+    var photoFile = photoInput.files[0];
+
+
+    if (!fullName || !dobValue || !email || !expertise || !skills || !photoFile) {
+      return false;
+    }
+
+  
+    if (/^\d/.test(fullName)) {
+      return false;
+    }
+
+  
+    if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+      return false;
+    }
+
+  
+    if (!photoFile.type || photoFile.type.indexOf("image/") !== 0) {
+      return false;
+    }
+
+    
+    var dobDate       = new Date(dobValue);
+    var lastAllowed   = new Date("2008-12-31");
+    if (dobDate > lastAllowed) {
+      return false;
+    }
+
+    return true;
+  }
+
+  
+  function updateSubmitState() {
+    if (isFormValid()) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  }
+
+
+  fullNameInput.addEventListener("input", updateSubmitState);
+  dobInput.addEventListener("change", updateSubmitState);
+  emailInput.addEventListener("input", updateSubmitState);
+  expertiseInput.addEventListener("input", updateSubmitState);
+  educationInput.addEventListener("input", updateSubmitState);
+  photoInput.addEventListener("change", updateSubmitState);
+  skillsInput.addEventListener("input", updateSubmitState);
+  reasonInput.addEventListener("input", updateSubmitState);
+
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // نمنع الإرسال العادي
+
+    if (!isFormValid()) {
+      alert("Please fill in all required fields correctly.");
+      updateSubmitState();
+      return;
+    }
+
+    var fullName = fullNameInput.value.trim();
+
+    alert("Your application has been received. Thank you, " + fullName + "!");
+    form.reset();
+    submitBtn.disabled = true; 
+  });
+});
+/*------------------------------------------------------End YARA-------------------------------------------------------------------*/

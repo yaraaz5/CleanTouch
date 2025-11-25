@@ -33,49 +33,51 @@
 
 
   <section class="card">
-    <h2 style="margin-bottom:10px;">Application Form</h2>
-    <form class="form-grid form-3" action="#">
+  <h2 style="margin-bottom:10px;">Application Form</h2>
+  <form id="applicationForm" class="form-grid form-3" action="#">
       <div>
         <label>Full Name *</label>
-        <input type="text" required>
+        <input type="text" id="fullName" required>
       </div>
       <div>
         <label>Date of Birth *</label>
-        <input type="date" required>
+        <input type="date" id="dob" required>
       </div>
       <div>
         <label>Email Address *</label>
-        <input type="email" required>
+        <input type="email" id="email" required>
       </div>
 
       <div>
         <label>Area of Expertise *</label>
-        <input type="text" required>
+        <input type="text" id="expertise" required>
       </div>
       <div>
         <label>Education Background (comma-separated)</label>
-        <input type="text" placeholder="e.g., BSc CS, MSc SE">
+        <input type="text" id="education" placeholder="e.g., BSc CS, MSc SE">
       </div>
       <div>
-        <label>Professional Photo</label>
-        <input type="file">
+        <label>Professional Photo *</label>
+        <input type="file" id="photo" accept="image/*" required>
       </div>
 
       <div>
-        <label>Skills (comma-separated)</label>
-        <input type="text" placeholder="e.g., ironing, stain removal">
+        <label>Skills (comma-separated) *</label>
+        <input type="text" id="skills" placeholder="e.g., ironing, stain removal" required>
       </div>
       <div style="grid-column: span 2;">
         <label>Why do you want to join clean touch?</label>
-        <textarea></textarea>
+        <textarea id="reason"></textarea>
       </div>
 
       <div class="form-actions" style="grid-column: 1 / -1;">
-        <button type="reset" class="btn gray">Cancel</button>
-        <button type="submit" class="btn" disabled>Submit</button>
+        
+        <a href="about.html" class="btn gray">Cancel</a>
+        <button type="submit" id="submitBtn" class="btn" disabled>Submit</button>
       </div>
     </form>
-  </section>
+</section>
+
 </main>
 
 <footer>
@@ -87,5 +89,6 @@
     <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
   </div>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>
