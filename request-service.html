@@ -25,46 +25,47 @@
 
   <section class="card">
     <h1 style="text-align:center; margin-bottom:16px;">Request a Service</h1>
-    <form class="form-grid">
-      <label>Select Service
-        <select>
-          <option>— Choose —</option>
-          <option>Dry-Cleaning</option>
-          <option>Ironing</option>
-          <option>Washing</option>
-		  <option>Folding Clothes Professionally</option>
-        </select>
-      </label>
+<form class="form-grid" id="requestForm">
 
-      <label>Full Name
-        <input type="text">
-      </label>
+  <label>Select Service
+    <select id="service">
+      <option value="">— Choose —</option>
+      <option value="Dry-Cleaning">Dry-Cleaning</option>
+      <option value="Ironing">Ironing</option>
+      <option value="Washing">Washing</option>
+      <option value="Folding Clothes Professionally">Folding Clothes Professionally</option>
+    </select>
+  </label>
 
-      <div class="form-2" style="display:grid; gap:14px; margin-top:6px">
-        <label>Date
-          <input type="date">
-        </label>
-        <label>Time
-          <input type="time" class="time-box">
-        </label>
-      </div>
+  <label>Full Name
+    <input type="text" id="fullName">
+  </label>
 
-      <div class="form-2" style="display:grid; gap:14px; margin-top:6px">
-        <label>Vouchers/Gift Card code
-          <input type="text">
-        </label>
-        <div style="align-self:end"><button class="btn gray" type="button">Apply</button></div>
-      </div>
+  <div class="form-2">
+    <label>Date
+      <input type="date" id="dueDate">
+    </label>
+    <label>Time
+      <input type="time" class="time-box" id="time">
+    </label>
+  </div>
 
-      <label>Description
-        <textarea></textarea>
-      </label>
+  <label>Description
+    <textarea id="description"></textarea>
+  </label>
 
-      <div class="form-actions">
-         <button type="reset" class="btn gray">Cancel</button>
-        <button type="submit" class="btn" disabled>Submit</button>
-      </div>
-    </form>
+  <div class="form-actions">
+    <button type="reset" class="btn gray">Cancel</button>
+    <button type="submit" class="btn">Submit</button>
+  </div>
+
+</form>
+
+<!-- Summary section -->
+<section class="card" id="requestSummary" style="display:none; margin-top:16px;">
+  <h2>Submitted Requests</h2>
+  <ul id="requestList"></ul>
+</section>
   </section>
 </main>
 
@@ -77,5 +78,6 @@
     <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
   </div>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>

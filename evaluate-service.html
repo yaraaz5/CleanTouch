@@ -25,39 +25,41 @@
 
   <section class="card">
     <h1 style="text-align:center; margin-bottom:16px;">Service Evaluation</h1>
-    <form class="form-grid">
-      <label>Select Service
-        <select>
-          <option>— Choose —</option>
-          <option>Dry Cleaning</option>
-          <option>Ironing</option> 
-          <option>Washing</option>
-		  <option>Folding Clothes Professionally</option>
-        </select>
-      </label>
+   <form class="form-grid" id="evaluationForm">
 
-      <label>Full Name
-        <input type="text">
-      </label>
+  <label>Select Service
+    <select id="evalService">
+      <option value="">— Choose —</option>
+      <option value="Dry Cleaning">Dry Cleaning</option>
+      <option value="Ironing">Ironing</option>
+      <option value="Washing">Washing</option>
+      <option value="Folding Clothes Professionally">Folding Clothes Professionally</option>
+    </select>
+  </label>
 
-    <label>Rating</label>
-	<div class="rating">
-		<input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-		<input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-		<input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-		<input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-		<input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-	</div>
+  <label>Full Name
+    <input type="text" id="evalName">
+  </label>
 
-      <label>Feedback
-        <textarea></textarea>
-      </label>
+  <label>Rating</label>
+  <div class="rating">
+    <input type="radio" name="rating" value="1"><label>★</label>
+    <input type="radio" name="rating" value="2"><label>★</label>
+    <input type="radio" name="rating" value="3"><label>★</label>
+    <input type="radio" name="rating" value="4"><label>★</label>
+    <input type="radio" name="rating" value="5"><label>★</label>
+  </div>
 
-      <div class="form-actions">
-        <button type="reset" class="btn gray">Cancel</button>
-        <button type="submit" class="btn" disabled>Submit</button>
-      </div>
-    </form>
+  <label>Feedback
+    <textarea id="feedback"></textarea>
+  </label>
+
+  <div class="form-actions">
+    <button type="reset" class="btn gray">Cancel</button>
+    <button type="submit" class="btn">Submit</button>
+  </div>
+
+</form>
   </section>
 </main>
 
@@ -70,5 +72,6 @@
     <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
   </div>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>
