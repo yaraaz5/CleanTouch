@@ -256,6 +256,38 @@ if (document.getElementById("requestForm")) {
 }
 
 
+//============= Voucher Extra Functionality ===============
+
+
+// List of valid voucher codes and their discount values
+const validVouchers = {
+    "DISCOUNT10": 10,
+    "CLEANTOUCH20": 20
+};
+
+// When the user clicks the Apply button
+const applyButton = document.getElementById("applyBtn");
+
+if (applyButton) {
+    applyButton.addEventListener("click", function () {
+        const code = document.getElementById("voucher").value.trim().toUpperCase();
+
+        if (code === "") {
+            alert("Please enter a voucher code.");
+            return;
+        }
+
+        // Check if the voucher exists in our list
+        if (validVouchers.hasOwnProperty(code)) {
+            const discountValue = validVouchers[code];
+            alert("Voucher applied successfully! You saved " + discountValue + " SAR.");
+        } else {
+            alert("Invalid voucher code. Valid codes are DISCOUNT10 and CLEANTOUCH20");
+        }
+    });
+}
+
+
 
 /* ====================================================
    SECTION 2 — SERVICE EVALUATION PAGE 
