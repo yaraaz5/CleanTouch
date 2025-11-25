@@ -836,14 +836,6 @@ footer{ margin-top:auto; }
   height: 10px;                 
 }
 
-.team-grid::-webkit-scrollbar-thumb {
-  background: #1e90ff;
-  border-radius: 5px;
-}
-
-.team-grid::-webkit-scrollbar-track {
-  background: #e6eefc;
-}
 
 .member-card {
   flex: 0 0 calc(33.333% - 20px); 
@@ -851,6 +843,26 @@ footer{ margin-top:auto; }
   max-width: 300px;
 }
 
+
+/* Default (Light Theme) scrollbar */
+.team-grid::-webkit-scrollbar-thumb {
+  background: #1e90ff; 
+  border-radius: 5px;
+}
+
+/* Dark/Green Theme scrollbar */
+body.theme-green .team-grid::-webkit-scrollbar-thumb {
+  background: #00cc66; 
+}
+
+
+.team-grid::-webkit-scrollbar-track {
+  background: #e6eefc;
+}
+body.theme-green .team-grid::-webkit-scrollbar-track {
+  background: #003322; 
+}
+  /* ياراend  */
 
 
 
