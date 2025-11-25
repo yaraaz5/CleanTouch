@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clean Touch — Home</title>
   <link rel="stylesheet" href="css/style.css">
- 
 </head>
 <body>
 
@@ -15,20 +14,23 @@
       <img src="images/logo.png" alt="Clean Touch logo">
       <span class="title">Clean touch</span>
     </a>
+
+    <!-- زر تبديل الثيم -->
+    <button id="themeToggle" class="btn theme-toggle-btn" type="button">
+      Switch Theme
+    </button>
+
     <nav>
       <ul class="nav">
         <li><a class="active" href="index.html">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="customer-dashboard.html">Customer Dashboard</a></li>
-<li><a href="provider-dashboard.html">Provider Dashboard</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="customer-dashboard.html">Customer Dashboard</a></li>
+        <li><a href="provider-dashboard.html">Provider Dashboard</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
-
-
 
 <!-- ===== Our Vision ===== -->
 <section class="vision light-section">
@@ -49,11 +51,7 @@
   </div>
 </section>
 
-
-
 <!-- ===== Featured Services ===== -->
-
-
 <section class="services-home">
   <h2>Featured Services</h2>
   <div class="services-container">
@@ -94,18 +92,8 @@
   </div>
 </section>
 
-
-
-
-
-  <!-- ===== Customer Reviews ===== -->
-  
-  
-  
-  
-  
-  
-  <section class="reviews">
+<!-- ===== Customer Reviews ===== -->
+<section class="reviews">
   <h2>Customer Reviews</h2>
   <div class="reviews-container">
 
@@ -139,20 +127,29 @@
   </div>
 </section>
 
-
-
-
-
-
+<!-- زر الرجوع لأعلى الصفحة -->
+<button id="backToTop" title="Back to top">↑</button>
 
 <footer>
   <div class="container footer-inner">
-    <div class="footer-col"><img src="images/logo.png" alt="logo" class="footer-logo"></div>
-	<div class="footer-col"><h4>Contact us</h4><p>Making laundry day effortless. Book, clean, and relax with CleanTouch.</p><p class="copy">©2025 CleanTouch</p></div>
+    <div class="footer-col">
+      <img src="images/logo.png" alt="logo" class="footer-logo">
+    </div>
+    <div class="footer-col">
+      <h4>Contact us</h4>
+      <p>Making laundry day effortless. Book, clean, and relax with CleanTouch.</p>
+      <p class="copy">
+        ©️2025 CleanTouch • 
+        <span id="clock"></span>
+      </p>
+    </div>
     <div class="footer-col"><div class="icon-placeholder"><img src="images/facebook.png" alt=""></div></div>
     <div class="footer-col"><div class="icon-placeholder"><img src="images/instagram.png" alt=""></div></div>
     <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
   </div>
 </footer>
+
+<!-- ملف الجافاسكربت المشترك لكل الصفحات -->
+<script src="js/script.js"></script>
 </body>
 </html>
