@@ -24,19 +24,33 @@
   <p class="breadcrumbs"><a href="provider-dashboard.html">Provider Dashboard</a> › Add New Service</p>
 
   <section class="card">
-   <h1 class="page-title">Add New Service</h1>
-    <form class="form-grid">
-      <label>Service Name <input type="text"></label>
-      <label>Service Price <input type="text"></label>
-      <label>Service Description <textarea></textarea></label>
-      <label>Service Photo <input type="file"></label>
+  <h1 class="page-title">Add New Service</h1>
 
-      <div class="form-actions">
-        <button type="reset" class="btn gray">Cancel</button>
-        <button type="submit" class="btn" disabled>Add</button>
-      </div>
-    </form>
-  </section>
+  <form id="addServiceForm" class="form-grid">
+    <label>Service Name
+      <input type="text" id="serviceName">
+    </label>
+
+    <label>Service Price
+      <input type="text" id="servicePrice">
+    </label>
+
+    <label>Service Description
+      <textarea id="serviceDescription"></textarea>
+    </label>
+
+    <label>Service Photo
+      <input type="file" id="servicePhoto">
+    </label>
+
+    <div class="form-actions">
+      <button type="reset" class="btn gray">Cancel</button>
+      <!-- زر عادي مو disabled عشان نستقبل submit -->
+      <button type="submit" class="btn">Add</button>
+    </div>
+  </form>
+</section>
+
 </main>
 
 
@@ -49,5 +63,6 @@
     <div class="footer-col"><div class="icon-placeholder"><img src="images/twitter.png" alt=""></div></div>
   </div>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>

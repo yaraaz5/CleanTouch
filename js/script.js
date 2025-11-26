@@ -454,3 +454,176 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 /*------------------------------------------------------End YARA-------------------------------------------------------------------*/
+/*------------------------------------------------------Najla — Phase 3: Services & Manage Staff ----------------------------------*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ===================================================================
+     1) Add New Service Page — Form Validation + LocalStorage Save
+     ===================================================================*/
+  var addServiceForm = document.getElementById("addServiceForm");
+
+  if (addServiceForm) {
+
+    var nameInput  = document.getElementById("serviceName");
+    var priceInput = document.getElementById("servicePrice");
+    var descInput  = document.getElementById("serviceDescription");
+    var photoInput = document.getElementById("servicePhoto");
+
+    addServiceForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var name  = nameInput.value.trim();
+      var price = priceInput.value.trim();
+      var desc  = descInput.value.trim();
+      var photo = photoInput.value.trim();
+
+      var errors = [];
+
+      /* ============ فحص الحقول الفارغة برسالة محددة ============ */
+      if (name === "") {
+        errors.push("Service name is empty.");
+      }
+      if (price === "") {
+        errors.push("Service price is empty.");
+      }
+      if (desc === "") {
+        errors.push("Service description is empty.");
+      }
+      if (photo === "") {
+        errors.push("Service photo is missing.");
+      }
+
+      /* ============ الاسم لا يبدأ برقم ============ */
+      if (name !== "" && /^\d/.test(name)) {
+        errors.push("Service name cannot start with a number.");
+      }
+
+      /* ============ السعر لازم رقم ============ */
+      if (price !== "" && isNaN(Number(price))) {
+        errors.push("Service price must be a valid number.");
+      }
+
+      /* ============ عرض الأخطاء إن وجدت ============ */
+      if (errors.length > 0) {
+        alert("Please fix the following:\n\n• " + errors.join("\n• "));
+        return;
+      }
+
+      /* ============ قراءة الخدمات القديمة ============ */
+      var stored = localStorage.getItem("ct_services");
+      var services = stored ? JSON.parse(stored) : [];
+
+      /* ============ إضافة خدمة جديدة ============ */
+      services.push({
+        name: name,
+        price: Number(price),
+        description: desc
+        // الصورة ثابتة لاحقاً في الـDashboard
+      });
+
+      /* ============ حفظ ============ */
+      localStorage.setItem("ct_services", JSON.stringify(services));
+
+      /* ============ تنبيه بالنجاح ============ */
+      alert('Service "' + name + '" has been added successfully.');
+
+      /* ============ تفريغ النموذج ============ */
+      addServiceForm.reset();
+    });
+  }
+
+  /* ===================================================================
+     2) Provider Dashboard — عرض الخدمات من LocalStorage + صورة ثابتة
+     ===================================================================*/
+  var listContainer = document.getElementById("providerServicesList");
+
+  if (listContainer) {
+
+    var storedServices = localStorage.getItem("ct_services");
+    var servicesArr = storedServices ? JSON.parse(storedServices) : [];
+
+    if (!servicesArr.length) {
+      listContainer.innerHTML = "<p>No services added yet.</p>";
+    } else {
+      listContainer.innerHTML = ""; // تنظيف
+
+      for (var i = 0; i < servicesArr.length; i++) {
+        var s = servicesArr[i];
+
+        var card = document.createElement("div");
+        card.className = "service-card";
+
+        card.innerHTML =
+          '<div class="thumb">' +
+            '<img src="images/ddd.png" alt="CleanTouch Service">' +
+          '</div>' +
+          '<div class="content">' +
+            "<p>" +
+              "<strong>" + s.name + "</strong><br>" +
+              s.description + "<br>" +
+              "SAR " + s.price +
+            "</p>" +
+            '<a href="#" class="btn gray">Edit</a>' +
+          "</div>";
+
+        listContainer.appendChild(card);
+      }
+    }
+
+    /* ===== Najla — Update Total Services ===== */
+    var totalBox = document.getElementById("totalServices");
+    if (totalBox) {
+      totalBox.textContent = servicesArr.length;
+    }
+  }
+
+  /* ===================================================================
+     3) Manage Staff Members — Delete Selected
+     ===================================================================*/
+  var manageStaffForm = document.getElementById("manageStaffForm");
+  if (manageStaffForm) {
+
+    manageStaffForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // كل التشيك بوكس داخل الفورم
+      var inputs = manageStaffForm.getElementsByTagName("input");
+      var selected = [];
+
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type === "checkbox" && inputs[i].checked) {
+          selected.push(inputs[i]);
+        }
+      }
+
+      // لو مافي ولا واحد محدد
+      if (selected.length === 0) {
+        alert("Please select at least one member.");
+        return;
+      }
+
+      // تأكيد الحذف
+      var ok = confirm("Are you sure you want to delete selected member(s)?");
+      if (!ok) {
+        return;
+      }
+
+      // حذف العناصر من الصفحة
+      for (var j = 0; j < selected.length; j++) {
+        var cb = selected[j];
+        var item = cb.parentNode; // label.staff-item
+        if (item && item.parentNode) {
+          item.parentNode.removeChild(item);
+        }
+      }
+
+      // نضمن إلغاء أي تحديد باقٍ
+      manageStaffForm.reset();
+    });
+  }
+
+});
+
+
+/*------------------------------------------------------End Najla Phase 3 Services & Manage Staff --------------------------------*/
