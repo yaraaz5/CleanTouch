@@ -456,11 +456,10 @@ document.addEventListener("DOMContentLoaded", function () {
 /*------------------------------------------------------End YARA-------------------------------------------------------------------*/
 /*------------------------------------------------------Najla — Phase 3: Services & Manage Staff ----------------------------------*/
 
+/* ===================  A) Add New Service + Provider Dashboard  =================== */
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ===================================================================
-     1) Add New Service Page — Form Validation + LocalStorage Save
-     ===================================================================*/
+  /* --------- 1) Add New Service Page --------- */
   var addServiceForm = document.getElementById("addServiceForm");
 
   if (addServiceForm) {
@@ -480,62 +479,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var errors = [];
 
-      /* ============ فحص الحقول الفارغة برسالة محددة ============ */
-      if (name === "") {
-        errors.push("Service name is empty.");
-      }
-      if (price === "") {
-        errors.push("Service price is empty.");
-      }
-      if (desc === "") {
-        errors.push("Service description is empty.");
-      }
-      if (photo === "") {
-        errors.push("Service photo is missing.");
-      }
+      // فحص الحقول الفارغة برسالة محددة
+      if (name === "")  errors.push("Service name is empty.");
+      if (price === "") errors.push("Service price is empty.");
+      if (desc === "")  errors.push("Service description is empty.");
+      if (photo === "") errors.push("Service photo is missing.");
 
-      /* ============ الاسم لا يبدأ برقم ============ */
+      // الاسم لا يبدأ برقم
       if (name !== "" && /^\d/.test(name)) {
         errors.push("Service name cannot start with a number.");
       }
 
-      /* ============ السعر لازم رقم ============ */
+      // السعر لازم رقم
       if (price !== "" && isNaN(Number(price))) {
         errors.push("Service price must be a valid number.");
       }
 
-      /* ============ عرض الأخطاء إن وجدت ============ */
+      // لو فيه أخطاء
       if (errors.length > 0) {
         alert("Please fix the following:\n\n• " + errors.join("\n• "));
         return;
       }
 
-      /* ============ قراءة الخدمات القديمة ============ */
+      // قراءة الخدمات القديمة
       var stored = localStorage.getItem("ct_services");
       var services = stored ? JSON.parse(stored) : [];
 
-      /* ============ إضافة خدمة جديدة ============ */
+      // إضافة خدمة جديدة
       services.push({
         name: name,
         price: Number(price),
         description: desc
-        // الصورة ثابتة لاحقاً في الـDashboard
+        // الصورة ثابتة في الداشبورد
       });
 
-      /* ============ حفظ ============ */
+      // حفظ
       localStorage.setItem("ct_services", JSON.stringify(services));
 
-      /* ============ تنبيه بالنجاح ============ */
+      // تنبيه بالنجاح
       alert('Service "' + name + '" has been added successfully.');
 
-      /* ============ تفريغ النموذج ============ */
+      // تفريغ النموذج
       addServiceForm.reset();
     });
   }
 
-  /* ===================================================================
-     2) Provider Dashboard — عرض الخدمات من LocalStorage + صورة ثابتة
-     ===================================================================*/
+  /* --------- 2) Provider Dashboard (عرض الخدمات + total) --------- */
   var listContainer = document.getElementById("providerServicesList");
 
   if (listContainer) {
@@ -564,66 +553,182 @@ document.addEventListener("DOMContentLoaded", function () {
               s.description + "<br>" +
               "SAR " + s.price +
             "</p>" +
-            '<a href="#" class="btn gray">Edit</a>' +
+            '<a href="#" class="btn gray" aria-disabled="true">Edit</a>' +
           "</div>";
 
         listContainer.appendChild(card);
       }
     }
 
-    /* ===== Najla — Update Total Services ===== */
+    // تحديث رقم Total Services
     var totalBox = document.getElementById("totalServices");
     if (totalBox) {
       totalBox.textContent = servicesArr.length;
     }
   }
 
-  /* ===================================================================
-     3) Manage Staff Members — Delete Selected
-     ===================================================================*/
-  var manageStaffForm = document.getElementById("manageStaffForm");
-  if (manageStaffForm) {
+});
 
-    manageStaffForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+/* ===================  B) Add Staff (نفس فكرة Add Service)  =================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-      // كل التشيك بوكس داخل الفورم
-      var inputs = manageStaffForm.getElementsByTagName("input");
-      var selected = [];
+  var addStaffForm = document.getElementById("addStaffForm");
+  if (!addStaffForm) return;   // مو في صفحة Add Staff
 
-      for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type === "checkbox" && inputs[i].checked) {
-          selected.push(inputs[i]);
-        }
-      }
+  addStaffForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      // لو مافي ولا واحد محدد
-      if (selected.length === 0) {
-        alert("Please select at least one member.");
-        return;
-      }
+    var name      = addStaffForm.elements["name"].value.trim();
+    var email     = addStaffForm.elements["email"].value.trim();
+    var dob       = addStaffForm.elements["dob"].value.trim();
+    var expertise = addStaffForm.elements["expertise"].value.trim();
+    var skills    = addStaffForm.elements["skills"].value.trim();
+    var education = addStaffForm.elements["education"].value.trim();
+    var photo     = addStaffForm.elements["photo"].value.trim(); // بس للتأكد إنه مو فاضي لو تبين
 
-      // تأكيد الحذف
-      var ok = confirm("Are you sure you want to delete selected member(s)?");
-      if (!ok) {
-        return;
-      }
+    var errors = [];
 
-      // حذف العناصر من الصفحة
-      for (var j = 0; j < selected.length; j++) {
-        var cb = selected[j];
-        var item = cb.parentNode; // label.staff-item
-        if (item && item.parentNode) {
-          item.parentNode.removeChild(item);
-        }
-      }
+    if (name === "")      errors.push("Name is empty.");
+    if (email === "")     errors.push("Email is empty.");
+    if (dob === "")       errors.push("Date of Birth is empty.");
+    if (expertise === "") errors.push("Area of expertise is empty.");
+    if (skills === "")    errors.push("Skills is empty.");
+    if (education === "") errors.push("Education is empty.");
+    if (photo === "")     errors.push("Photo is missing.");
 
-      // نضمن إلغاء أي تحديد باقٍ
-      manageStaffForm.reset();
+    // الاسم لا يبدأ برقم
+    if (name !== "" && /^\d/.test(name)) {
+      errors.push("Name cannot start with a number.");
+    }
+
+    // RegEx بسيط من سلايد الـRegEx
+    var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (email !== "" && !emailPattern.test(email)) {
+      errors.push("Email is not valid.");
+    }
+
+    if (errors.length > 0) {
+      alert("Please fix the following:\n\n• " + errors.join("\n• "));
+      return;
+    }
+
+    // قراءة الستاڤ القديم من localStorage
+    var storedStaff = localStorage.getItem("ct_staff");
+    var staffArr = storedStaff ? JSON.parse(storedStaff) : [];
+
+    // إضافة موظف جديد
+    staffArr.push({
+      name: name,
+      email: email,
+      dob: dob,
+      expertise: expertise,
+      skills: skills,
+      education: education
+      // ما نحتاج نخزن الصورة فعلياً، بنعرض صورة ثابتة في manage-staff
     });
+
+    localStorage.setItem("ct_staff", JSON.stringify(staffArr));
+
+    alert('Staff member "' + name + '" has been added successfully.');
+
+    addStaffForm.reset();
+  });
+
+});
+
+/* ===================  C) Manage Staff (تحميل + Delete)  =================== */
+document.addEventListener("DOMContentLoaded", function () {
+
+  var manageStaffForm = document.getElementById("manageStaffForm");
+  if (!manageStaffForm) return;   // مو في صفحة manage-staff
+
+  var staffList = manageStaffForm.querySelector(".staff-list");
+
+  // 1) تحميل الموظفين من localStorage وإضافتهم تحت الموجودين
+  var storedStaff = localStorage.getItem("ct_staff");
+  var staffArr = storedStaff ? JSON.parse(storedStaff) : [];
+
+  if (staffList && staffArr.length) {
+    for (var i = 0; i < staffArr.length; i++) {
+      var m = staffArr[i];
+
+      var label = document.createElement("label");
+      label.className = "staff-item";
+
+      label.innerHTML =
+        '<input type="checkbox" class="staff-check">' +
+        '<div><img src="images/emp-new.png" alt="' + m.name + '" width="100" height="56"></div>' +
+        '<div>' + m.name + '</div>';
+
+      staffList.appendChild(label);
+    }
   }
+
+  // 2) حذف الأعضاء المحددين عند الضغط على Delete
+  manageStaffForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var inputs = manageStaffForm.getElementsByTagName("input");
+    var selectedCheckboxes = [];
+    var selectedNames = [];
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type === "checkbox" && inputs[i].checked) {
+        selectedCheckboxes.push(inputs[i]);
+      }
+    }
+
+    // لو مافي ولا واحد محدد
+    if (selectedCheckboxes.length === 0) {
+      alert("Please select at least one member.");
+      return;
+    }
+
+    // تأكيد الحذف
+    var ok = confirm("Are you sure you want to delete selected member(s)?");
+    if (!ok) {
+      return;
+    }
+
+    // حذف من الصفحة + جمع الأسماء عشان نحذفهم من localStorage
+    for (var j = 0; j < selectedCheckboxes.length; j++) {
+      var cb = selectedCheckboxes[j];
+      var item = cb.parentNode;     // label.staff-item
+
+      // اسم الموظف موجود في آخر div داخل الـlabel
+      var nameDiv = item.querySelector("div:last-child");
+      var memberName = nameDiv ? nameDiv.textContent : "";
+
+      if (memberName !== "") {
+        selectedNames.push(memberName);
+      }
+
+      if (item && item.parentNode) {
+        item.parentNode.removeChild(item);
+      }
+    }
+
+    // تحديث localStorage: نحذف أي عنصر اسمه ضمن selectedNames
+    if (selectedNames.length > 0) {
+      var storedAgain = localStorage.getItem("ct_staff");
+      var arrAgain = storedAgain ? JSON.parse(storedAgain) : [];
+
+      var filtered = [];
+      for (var k = 0; k < arrAgain.length; k++) {
+        // نخلي فقط اللي اسمه مو موجود ضمن اللي انحذفوا
+        if (selectedNames.indexOf(arrAgain[k].name) === -1) {
+          filtered.push(arrAgain[k]);
+        }
+      }
+
+      localStorage.setItem("ct_staff", JSON.stringify(filtered));
+    }
+
+    // نضمن إلغاء التحديد
+    manageStaffForm.reset();
+  });
 
 });
 
 
-/*------------------------------------------------------End Najla Phase 3 Services & Manage Staff --------------------------------*/
+/*------------------------------------------------------End Najla Phase 3: Services & Manage Staff --------------------------------*/
