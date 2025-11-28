@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
-  /* ================= Theme Switcher ================= */
   const themeBtn = document.getElementById("themeToggle");
   const savedTheme = localStorage.getItem("cleanTouchTheme");
 
-  // تطبيق الثيم المحفوظ سابقاً
   if (savedTheme === "green") {
     body.classList.add("theme-green");
   }
@@ -15,18 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const isGreen = body.classList.contains("theme-green");
 
       if (isGreen) {
-        // رجوع للوضع العادي
         body.classList.remove("theme-green");
         localStorage.setItem("cleanTouchTheme", "light");
       } else {
-        // تفعيل الثيم الأخضر
         body.classList.add("theme-green");
         localStorage.setItem("cleanTouchTheme", "green");
       }
     });
   }
 
-  /* ================= Back to Top Button ================= */
   const backToTopBtn = document.getElementById("backToTop");
 
   if (backToTopBtn) {
@@ -46,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ================= Real-Time Clock in Footer ================= */
   const clockEl = document.getElementById("clock");
 
   if (clockEl) {
@@ -66,31 +60,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/* ====================== SERVICES PAGE SORTING ====================== */
+
 document.addEventListener("DOMContentLoaded", function () {
   const sortSelect = document.getElementById("sort");
   const servicesContainer = document.querySelector(".services-container");
 
-  // إذا ليست صفحة السيرفس، تجاهل
   if (!sortSelect || !servicesContainer) return;
 
   let serviceBoxes = Array.from(
     servicesContainer.querySelectorAll(".service-box")
   );
 
-  /* إعادة عرض البطاقات */
   function renderServices(list) {
     servicesContainer.innerHTML = "";
     list.forEach((card) => servicesContainer.appendChild(card));
   }
 
-  /* ترتيب عشوائي */
   function shuffleServices() {
     const shuffled = [...serviceBoxes].sort(() => Math.random() - 0.5);
     renderServices(shuffled);
   }
 
-  /* ترتيب بالأبجدية */
   function sortByName(order) {
     const sorted = [...serviceBoxes].sort((a, b) => {
       const nameA = a.querySelector("h3").innerText.toLowerCase();
@@ -104,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderServices(sorted);
   }
 
-  /* ترتيب بالسعر */
   function sortByPrice(order) {
     const sorted = [...serviceBoxes].sort((a, b) => {
       const priceA = parseInt(
@@ -120,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderServices(sorted);
   }
 
-  /* عند تغيير القائمة */
   sortSelect.addEventListener("change", function () {
     if (this.value === "a-z" || this.value === "z-a") {
       sortByName(this.value);
@@ -129,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* ترتيب عشوائي عند فتح الصفحة */
   shuffleServices();
 });
 
@@ -363,7 +350,6 @@ if (document.getElementById("evaluationForm")) {
 /*------------------------------------------------------TALA-------------------------------------------------------------------*/
 
 /*------------------------------------------------------YARA-------------------------------------------------------------------*/
-// Validation for Application Form (Join Our Team)
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("applicationForm");
   if (!form) return;
@@ -391,9 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var errors = [];
 
-    // ===================================================
-    // REQUIRED FIELD CHECKS
-    // ===================================================
+   
     if (!fullName) errors.push("Full Name is required.");
     if (!dobValue) errors.push("Date of Birth is required.");
     if (!email) errors.push("Email is required.");
@@ -403,16 +387,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!reason) errors.push("Reason for applying is required.");
     if (!photoFile) errors.push("Photo upload is required.");
 
-    // ===================================================
-    // NAME VALIDATION — cannot start with number
-    // ===================================================
+    
     if (fullName && /^\d/.test(fullName)) {
       errors.push("Full Name cannot start with a number.");
     }
 
-    // ===================================================
-    // DOB VALIDATION — must not be after 2008
-    // ===================================================
+    
     if (dobValue) {
       var dobDate = new Date(dobValue);
       var lastAllowed = new Date("2008-12-31");
@@ -421,24 +401,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // ===================================================
-    // PHOTO VALIDATION — must be an image
-    // ===================================================
+   
     if (photoFile && !photoFile.type.startsWith("image/")) {
       errors.push("Photo must be an image file (jpg, jpeg, png, gif).");
     }
 
-    // ===================================================
-    // SHOW ERRORS IF ANY
-    // ===================================================
+   
     if (errors.length > 0) {
       alert("Please fix the following:\n\n• " + errors.join("\n• "));
       return;
     }
 
-    // ===================================================
-    // SUCCESS MESSAGE
-    // ===================================================
+   
     alert("Thank you, " + fullName + "! Your application has been successfully submitted.");
     form.reset();
   });
@@ -449,7 +423,6 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ===================  A) Add New Service + Provider Dashboard  =================== */
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* --------- 1) Add New Service Page --------- */
   var addServiceForm = document.getElementById("addServiceForm");
 
   if (addServiceForm) {
@@ -469,52 +442,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var errors = [];
 
-      // فحص الحقول الفارغة برسالة محددة
       if (name === "")  errors.push("Service name is empty.");
       if (price === "") errors.push("Service price is empty.");
       if (desc === "")  errors.push("Service description is empty.");
       if (photo === "") errors.push("Service photo is missing.");
 
-      // الاسم لا يبدأ برقم
       if (name !== "" && /^\d/.test(name)) {
         errors.push("Service name cannot start with a number.");
       }
 
-      // السعر لازم رقم
       if (price !== "" && isNaN(Number(price))) {
         errors.push("Service price must be a valid number.");
       }
 
-      // لو فيه أخطاء
       if (errors.length > 0) {
         alert("Please fix the following:\n\n• " + errors.join("\n• "));
         return;
       }
 
-      // قراءة الخدمات القديمة
       var stored = localStorage.getItem("ct_services");
       var services = stored ? JSON.parse(stored) : [];
 
-      // إضافة خدمة جديدة
       services.push({
         name: name,
         price: Number(price),
         description: desc
-        // الصورة ثابتة في الداشبورد
       });
 
-      // حفظ
       localStorage.setItem("ct_services", JSON.stringify(services));
 
-      // تنبيه بالنجاح
       alert('Service "' + name + '" has been added successfully.');
 
-      // تفريغ النموذج
       addServiceForm.reset();
     });
   }
 
-  /* --------- 2) Provider Dashboard (عرض الخدمات + total) --------- */
   var listContainer = document.getElementById("providerServicesList");
 
   if (listContainer) {
@@ -525,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!servicesArr.length) {
       listContainer.innerHTML = "<p>No services added yet.</p>";
     } else {
-      listContainer.innerHTML = ""; // تنظيف
+      listContainer.innerHTML = ""; 
 
       for (var i = 0; i < servicesArr.length; i++) {
         var s = servicesArr[i];
@@ -550,7 +512,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // تحديث رقم Total Services
     var totalBox = document.getElementById("totalServices");
     if (totalBox) {
       totalBox.textContent = servicesArr.length;
@@ -559,11 +520,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/* ===================  B) Add Staff (نفس فكرة Add Service)  =================== */
 document.addEventListener("DOMContentLoaded", function () {
 
   var addStaffForm = document.getElementById("addStaffForm");
-  if (!addStaffForm) return;   // مو في صفحة Add Staff
+  if (!addStaffForm) return;   
 
   addStaffForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -574,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var expertise = addStaffForm.elements["expertise"].value.trim();
     var skills    = addStaffForm.elements["skills"].value.trim();
     var education = addStaffForm.elements["education"].value.trim();
-    var photo     = addStaffForm.elements["photo"].value.trim(); // بس للتأكد إنه مو فاضي لو تبين
+    var photo     = addStaffForm.elements["photo"].value.trim(); 
 
     var errors = [];
 
@@ -586,12 +546,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (education === "") errors.push("Education is empty.");
     if (photo === "")     errors.push("Photo is missing.");
 
-    // الاسم لا يبدأ برقم
     if (name !== "" && /^\d/.test(name)) {
       errors.push("Name cannot start with a number.");
     }
 
-    // RegEx بسيط من سلايد الـRegEx
     var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (email !== "" && !emailPattern.test(email)) {
       errors.push("Email is not valid.");
@@ -602,11 +560,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // قراءة الستاڤ القديم من localStorage
     var storedStaff = localStorage.getItem("ct_staff");
     var staffArr = storedStaff ? JSON.parse(storedStaff) : [];
 
-    // إضافة موظف جديد
     staffArr.push({
       name: name,
       email: email,
@@ -614,7 +570,6 @@ document.addEventListener("DOMContentLoaded", function () {
       expertise: expertise,
       skills: skills,
       education: education
-      // ما نحتاج نخزن الصورة فعلياً، بنعرض صورة ثابتة في manage-staff
     });
 
     localStorage.setItem("ct_staff", JSON.stringify(staffArr));
@@ -626,15 +581,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/* ===================  C) Manage Staff (تحميل + Delete)  =================== */
 document.addEventListener("DOMContentLoaded", function () {
 
   var manageStaffForm = document.getElementById("manageStaffForm");
-  if (!manageStaffForm) return;   // مو في صفحة manage-staff
+  if (!manageStaffForm) return;   
 
   var staffList = manageStaffForm.querySelector(".staff-list");
 
-  // 1) تحميل الموظفين من localStorage وإضافتهم تحت الموجودين
   var storedStaff = localStorage.getItem("ct_staff");
   var staffArr = storedStaff ? JSON.parse(storedStaff) : [];
 
@@ -654,7 +607,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 2) حذف الأعضاء المحددين عند الضغط على Delete
   manageStaffForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -668,24 +620,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // لو مافي ولا واحد محدد
     if (selectedCheckboxes.length === 0) {
       alert("Please select at least one member.");
       return;
     }
 
-    // تأكيد الحذف
     var ok = confirm("Are you sure you want to delete selected member(s)?");
     if (!ok) {
       return;
     }
 
-    // حذف من الصفحة + جمع الأسماء عشان نحذفهم من localStorage
     for (var j = 0; j < selectedCheckboxes.length; j++) {
       var cb = selectedCheckboxes[j];
       var item = cb.parentNode;     // label.staff-item
 
-      // اسم الموظف موجود في آخر div داخل الـlabel
       var nameDiv = item.querySelector("div:last-child");
       var memberName = nameDiv ? nameDiv.textContent : "";
 
@@ -698,14 +646,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // تحديث localStorage: نحذف أي عنصر اسمه ضمن selectedNamescc
     if (selectedNames.length > 0) {
       var storedAgain = localStorage.getItem("ct_staff");
       var arrAgain = storedAgain ? JSON.parse(storedAgain) : [];
 
       var filtered = [];
       for (var k = 0; k < arrAgain.length; k++) {
-        // نخلي فقط اللي اسمه مو موجود ضمن اللي انحذفوا
         if (selectedNames.indexOf(arrAgain[k].name) === -1) {
           filtered.push(arrAgain[k]);
         }
@@ -714,7 +660,6 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("ct_staff", JSON.stringify(filtered));
     }
 
-    // نضمن إلغاء التحديد
     manageStaffForm.reset();
   });
 

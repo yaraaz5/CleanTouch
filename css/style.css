@@ -875,24 +875,18 @@ body.theme-green .team-grid::-webkit-scrollbar-track {
  
  
  
- /* ============================================================
-   NEW TEXT COLOR SYSTEM — PEACH × BEIGE  (Final Recommended)
-   نفس نظام الثيم الأصلي ولكن بألوان جديدة واضحة ومتناسقة
-   ============================================================ */
+ 
 
-/* ========== العناوين الكبيرة (Our Vision, Customer Reviews) ========== */
 body.theme-green h1,
 body.theme-green h2 {
   color: #d87b50 !important; 
 }
 
-/* ========== عناوين وسط وصغيرة (Featured Services, Meet Our Team) ========== */
 body.theme-green h3,
 body.theme-green h4 {
   color: #b26444 !important;  
 }
 
-/* ========== نص الفقرات في كل الصفحات ========== */
 body.theme-green p,
 body.theme-green span,
 body.theme-green li,
@@ -900,7 +894,6 @@ body.theme-green strong {
   color: #8a5137 !important;  
 }
 
-/* ========== النص الخفيف والتفاصيل الصغيرة ========== */
 body.theme-green .copy,
 body.theme-green small,
 body.theme-green .service-name,
@@ -908,13 +901,11 @@ body.theme-green .hero-sub {
   color: #cfa48a !important; 
 }
 
-/* ========== الروابط – نفس فكرة الثيم الأصلي (لون مميز) ========== */
 body.theme-green a,
 body.theme-green nav a {
-  color: #e08a55 !important;   /* Accent Peach */
+  color: #e08a55 !important;  
 }
 
-/* ========== داخل البوكسات البيضاء (services/reviews/cards) ========== */
 body.theme-green .light-section *,
 body.theme-green .service-box *,
 body.theme-green .review *,
@@ -929,7 +920,6 @@ body.theme-green .section-box * {
   color: #8a5137 !important;  
 }
 
-/* ========== عناوين داخل البوكسات ========== */
 body.theme-green .light-section h2,
 body.theme-green .service-box h3,
 body.theme-green .review h3,
@@ -937,7 +927,6 @@ body.theme-green .services-header-box h2 {
   color: #b26444 !important;
 }
 
-/* ========== الأزرار ========== */
 body.theme-green .btn {
   background: #e08a55 !important;
   border-color: #e08a55 !important;
@@ -946,7 +935,6 @@ body.theme-green .btn {
 body.theme-green .btn:hover {
   background: #cf7744 !important;
 }
-/* ========== ORIGINAL GREEN THEME (restored) ========== */
 body.theme-green {
   background: #0f2f25 !important;
   color: inherit !important;
@@ -998,10 +986,7 @@ body.theme-green .reviews * {
 }
 
 
-/* ===========================================
-   FIX NAV COLORS FOR GREEN THEME
-   (normal / hover / active / underline)
-   =========================================== */
+
 
 
 body.theme-green nav a {
@@ -1030,12 +1015,10 @@ nav a.active {
 
 
 
-/* ======== Fix "Sort by:" text color inside Green Theme ======== */
 body.theme-green .sort-box label {
   color: #f1b48d !important;  
 }
 
-/* Restore bubbles for green theme header */
 body.theme-green header {
   background-color: #1c5a47 !important;
   background-image: url("../images/bubbles.png") !important;
@@ -1070,7 +1053,6 @@ body.theme-green footer {
   display: block;
 }
 
-/* === Fix rating stars in Green Theme === */
 
 body.theme-green .rating {
   position: relative;
@@ -1083,13 +1065,11 @@ body.theme-green .rating label {
   color: #d1d5db !important;   
 }
 
-/* yellow on hover */
 body.theme-green .rating label:hover,
 body.theme-green .rating label:hover ~ label {
   color: #ffd700 !important;   
 }
 
-/* yellow when selected */
 body.theme-green .rating input:checked ~ label {
   color: #ffd700 !important;   
 }
@@ -1099,13 +1079,9 @@ body.theme-green .rating input:checked ~ label {
 
 
 
-/* =======================
-   RESPONSIVE FOR HOMEPAGE
-  ======================= */
 
 @media (max-width: 768px) {
 
-  /* 1) Responsive Homepage Layout */
   .light-section,
   .services-home,
   .reviews {
@@ -1113,7 +1089,6 @@ body.theme-green .rating input:checked ~ label {
     padding: 30px 15px;
   }
 
-  /* 2) Global Navigation becomes mobile-friendly */
   .header-row {
     flex-direction: column;
     align-items: flex-start;
@@ -1131,13 +1106,11 @@ body.theme-green .rating input:checked ~ label {
     height: 70px;
   }
 
-  /* 3) Responsive Images  */
   img {
     max-width: 100%;
     height: auto;
   }
 
-  /* 4) Services boxes become stacked */
   .services-container {
     flex-direction: column;
     align-items: center;
@@ -1146,7 +1119,6 @@ body.theme-green .rating input:checked ~ label {
     width: 90%;
   }
 
-  /* 5) Reviews become stacked */
   .reviews-container {
     flex-direction: column;
     align-items: center;
@@ -1155,7 +1127,6 @@ body.theme-green .rating input:checked ~ label {
     width: 90%;
   }
 
-  /* 6) Footer becomes stacked */
   .footer-inner {
     flex-direction: column;
     text-align: center;
@@ -1171,7 +1142,6 @@ body.theme-green .rating input:checked ~ label {
 }
 
 
-/* Mobile Navigation Cleanup */
 @media (max-width: 768px) {
 
   
