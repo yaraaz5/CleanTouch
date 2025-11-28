@@ -1,3 +1,5 @@
+/*START*/
+
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
@@ -121,18 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*------------------------------------------------------TALA-------------------------------------------------------------------*/
-/*  This code is written in a clean, simple style
- *  that matches your course slides: DOM, events,
- *  validation, alert(), confirm(), and basic RegEx.*/
 
 
-/* ====================================================
-   SECTION 1 — REQUEST A SERVICE PAGE 
-   ==================================================== */
+
+/* REQUEST A SERVICE PAGE */
+
 
 if (document.getElementById("requestForm")) {
 
-    // Get form elements
+    
     const form = document.getElementById("requestForm");
     const service = document.getElementById("service");
     const fullName = document.getElementById("fullName");
@@ -140,28 +139,24 @@ if (document.getElementById("requestForm")) {
     const time = document.getElementById("time");
     const description = document.getElementById("description");
 
-    // Where we show added requests (if user chooses to stay)
+  
     const summaryBox = document.getElementById("requestSummary");
     const requestList = document.getElementById("requestList");
 
-    let storedRequests = [];   // temporary list (erased when page closes)
+    let storedRequests = [];   
 
-    // Form submission handler
+   
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
         let errors = [];
 
-        /* -----------------------------
-           VALIDATION (From Phase 3 PDF)
-           ----------------------------- */
 
-        // No service selected
         if (service.value.trim() === "") {
             errors.push("Please select a service.");
         }
 
-        // Validate full name (must contain two names, no numbers/symbols)
+
         let nameValue = fullName.value.trim();
         let hasBadChars = /[0-9?!@]/.test(nameValue);
         let isFull = nameValue.split(" ").length >= 2;
@@ -170,7 +165,7 @@ if (document.getElementById("requestForm")) {
             errors.push("Please enter a valid full name (no numbers or ?!@).");
         }
 
-        // Validate date (must be at least 2 days ahead)
+
         if (date.value === "") {
             errors.push("Please select a valid date.");
         } else {
@@ -185,27 +180,23 @@ if (document.getElementById("requestForm")) {
             }
         }
 
-        // Description must be 100+ characters
         if (description.value.trim().length < 100) {
             errors.push("Description must be at least 100 characters long.");
         }
 
-        // If any errors exist → show alert and STOP
         if (errors.length > 0) {
             alert("Please fix the following:\n\n• " + errors.join("\n• "));
             return;
         }
 
-        /* -----------------------------
-           FORM IS VALID → CONFIRM BOX
-           ----------------------------- */
+      
         const stay = confirm(
             "Your request has been sent successfully.\n\n" +
             "Click OK to stay here and view your requests,\n" +
             "or Cancel to return to the Customer Dashboard."
         );
 
-        // Build request object
+
         const requestObj = {
             service: service.value,
             name: nameValue,
@@ -215,13 +206,10 @@ if (document.getElementById("requestForm")) {
         };
 
         if (stay) {
-            // Show the summary box
             summaryBox.style.display = "block";
 
-            // Add to temporary list
             storedRequests.push(requestObj);
 
-            // Display visually
             const li = document.createElement("li");
             li.textContent =
                 requestObj.service + " | " +
@@ -233,26 +221,23 @@ if (document.getElementById("requestForm")) {
             li.style.marginBottom = "10px";
             requestList.appendChild(li);
 
-            // Reset form for new entry
+           
             form.reset();
         } else {
-            // Return to dashboard
             window.location.href = "customer-dashboard.html";
         }
     });
 }
 
 
-//============= Voucher Extra Functionality ===============
+//Voucher Extra Functionality 
 
 
-// List of valid voucher codes and their discount values
 const validVouchers = {
     "DISCOUNT10": 10,
     "CLEANTOUCH20": 20
 };
 
-// When the user clicks the Apply button
 const applyButton = document.getElementById("applyBtn");
 
 if (applyButton) {
@@ -264,7 +249,7 @@ if (applyButton) {
             return;
         }
 
-        // Check if the voucher exists in our list
+
         if (validVouchers.hasOwnProperty(code)) {
             const discountValue = validVouchers[code];
             alert("Voucher applied successfully! You saved " + discountValue + " SAR.");
@@ -276,9 +261,8 @@ if (applyButton) {
 
 
 
-/* ====================================================
-   SECTION 2 — SERVICE EVALUATION PAGE 
-   ==================================================== */
+/* SERVICE EVALUATION PAGE */
+ 
 
 if (document.getElementById("evaluationForm")) {
 
@@ -287,7 +271,6 @@ if (document.getElementById("evaluationForm")) {
     const fullName = document.getElementById("evalName");
     const feedback = document.getElementById("feedback");
 
-    // Remove red highlight (small helper function)
     function clearHighlight() {
         service.classList.remove("field-error");
         fullName.classList.remove("field-error");
@@ -305,9 +288,7 @@ if (document.getElementById("evaluationForm")) {
         const feedbackValue = feedback.value.trim();
         const rating = document.querySelector('input[name="rating"]:checked');
 
-        /* -----------------------------
-           VALIDATION (From PDF)
-           ----------------------------- */
+
 
         if (serviceValue === "") {
             errors.push("Please select a service.");
@@ -328,9 +309,7 @@ if (document.getElementById("evaluationForm")) {
             return;
         }
 
-        /* -----------------------------
-           CHECK RATING AND THANK USER
-           ----------------------------- */
+
         const stars = parseInt(rating.value);
 
         if (stars >= 4) {
@@ -339,7 +318,7 @@ if (document.getElementById("evaluationForm")) {
             alert("Thank you for your review. We're sorry your experience wasn't perfect.");
         }
 
-        // Redirect back to dashboard
+
         window.location.href = "customer-dashboard.html";
     });
 }
@@ -347,7 +326,7 @@ if (document.getElementById("evaluationForm")) {
 
 
 
-/*------------------------------------------------------TALA-------------------------------------------------------------------*/
+/*------------------------------------------------------TALA END -------------------------------------------------------------------*/
 
 /*------------------------------------------------------YARA-------------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", function () {

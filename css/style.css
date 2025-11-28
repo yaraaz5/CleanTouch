@@ -356,7 +356,7 @@ textarea{min-height:110px; resize:vertical}
 
 
 
-/* Tala: Colored Status Tags in Customer Dashboard */
+/*Colored Status Tags in Customer Dashboard */
 .status {
   font-weight: 600;
   padding: 6px 12px;
@@ -365,18 +365,18 @@ textarea{min-height:110px; resize:vertical}
 
 /* Colors for each status */
 .status.completed {
-  background-color: #d1fae5; /* light green */
-  color: #065f46;            /* dark green text */
+  background-color: #d1fae5;
+  color: #065f46;            
 }
 
 .status.pending {
-  background-color: #fef9c3; /* light yellow */
-  color: #92400e;            /*brown text */
+  background-color: #fef9c3;
+  color: #92400e;           
 }
 
 .status.declined {
-  background-color: #fee2e2; /* pink */
-  color: #991b1b;            /* dark red text */
+  background-color: #fee2e2; 
+  color: #991b1b;            
 }
 
 
@@ -736,12 +736,8 @@ header{
 
 
 
-
-
-
-
 /*TAAAAAAAAAAAAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAA*/
-/* Tala's Request a Service page: fix time input box (it used defaults of broswer which doesn't look pleasant */
+/*Request a Service page: fix time input box (it used defaults of broswer which doesn't look pleasant */
 .time-box {
   width:100%;
   background:#fff;
@@ -766,16 +762,16 @@ header{
 /* Footer Logo */
 .footer-logo {
   width: 100px;
-  height: auto;                /* keeps original مقاسات */
+  height: auto;                
   object-fit: contain;         /* prevents cropping */
   display: block;
 }
 
 
-/* Star Rating (Tala's Service Evaluation page) */
+/* Star Rating (Service Evaluation page) */
 .rating {
   display: inline-flex;
-  flex-direction: row;        /* normal left-to-right order */
+  flex-direction: row;  
   justify-content: flex-start;
   gap: 4px;
 }
@@ -797,19 +793,19 @@ header{
     pointer-events: auto;
 }
 
-/* hover: light up  */
+/*hover: light up*/
 .rating label:hover,
 .rating label:hover ~ label {
   color: #ffd700;
 }
 
-/* yellow للنجوم لون*/
+/* yellow*/
 .rating input:checked ~ label {
   color: #ffd700;
 }
 
   
-  /* --- Sticky footer for all pages --- */
+/*Sticky footer for all pages */
 html, body { height: 100%; }
 body{
   min-height:100vh;
@@ -869,12 +865,6 @@ body.theme-green .team-grid::-webkit-scrollbar-track {
 
 
  /*  L تعديل فيز تو  */
- 
- 
- 
- 
- 
- 
  
 
 body.theme-green h1,
