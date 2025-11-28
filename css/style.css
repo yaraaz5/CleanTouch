@@ -1177,6 +1177,25 @@ body.theme-green .rating input:checked ~ label {
 
 
 
+/* Fix forms on mobile */
+@media (max-width: 768px) {
+
+  .form-grid,
+  .form-3,
+  .form-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-grid > div,
+  .form-3 > div,
+  .form-2 > div {
+    width: 100%;
+  }
+
+  input, textarea, select {
+    width: 100% !important;
+  }
+}
 
 
 
