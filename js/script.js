@@ -698,7 +698,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // تحديث localStorage: نحذف أي عنصر اسمه ضمن selectedNames
+    // تحديث localStorage: نحذف أي عنصر اسمه ضمن selectedNamescc
     if (selectedNames.length > 0) {
       var storedAgain = localStorage.getItem("ct_staff");
       var arrAgain = storedAgain ? JSON.parse(storedAgain) : [];
