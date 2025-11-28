@@ -339,6 +339,8 @@ textarea{min-height:110px; resize:vertical}
 
 /*==============najla end=================*/
 
+
+/*-----------------Tala--------------------*/
 /*  colors  */
 .request-link .action-icon {
   background-color: #e9f4ff;
@@ -351,6 +353,8 @@ textarea{min-height:110px; resize:vertical}
   border-radius: 50%;
   padding: 10px;
 }
+
+
 
 /* Tala: Colored Status Tags in Customer Dashboard */
 .status {
@@ -461,18 +465,6 @@ header{
 .profile-edu ul{margin:0;padding-left:18px;list-style:none}
 .profile-edu ul ul{margin-top:4px;list-style:circle}
 /*نهايد تعديل يارا*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -799,7 +791,13 @@ header{
   transition: color 0.2s ease;
 }
 
-/* Correct hover: light up from left to right */
+.rating label {
+    position: relative;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+/* hover: light up  */
 .rating label:hover,
 .rating label:hover ~ label {
   color: #ffd700;
@@ -1068,6 +1066,31 @@ body.theme-green footer {
   display: block;
 }
 
+/* === Fix rating stars in Green Theme === */
+
+body.theme-green .rating {
+  position: relative;
+}
+
+/* default gray color for stars + make sure they stay clickable and on top */
+body.theme-green .rating label {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+  color: #d1d5db !important;   /* light gray */
+}
+
+/* yellow on hover */
+body.theme-green .rating label:hover,
+body.theme-green .rating label:hover ~ label {
+  color: #ffd700 !important;   /* gold */
+}
+
+/* yellow when selected */
+body.theme-green .rating input:checked ~ label {
+  color: #ffd700 !important;   /* gold */
+}
+
 
 
 
@@ -1075,8 +1098,7 @@ body.theme-green footer {
 
 /* =======================
    RESPONSIVE FOR HOMEPAGE
-  
-======================= */
+  ======================= */
 
 @media (max-width: 768px) {
 
