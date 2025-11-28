@@ -1072,23 +1072,22 @@ body.theme-green .rating {
   position: relative;
 }
 
-/* default gray color for stars + make sure they stay clickable and on top */
 body.theme-green .rating label {
   position: relative;
   z-index: 5;
   pointer-events: auto;
-  color: #d1d5db !important;   /* light gray */
+  color: #d1d5db !important;   
 }
 
 /* yellow on hover */
 body.theme-green .rating label:hover,
 body.theme-green .rating label:hover ~ label {
-  color: #ffd700 !important;   /* gold */
+  color: #ffd700 !important;   
 }
 
 /* yellow when selected */
 body.theme-green .rating input:checked ~ label {
-  color: #ffd700 !important;   /* gold */
+  color: #ffd700 !important;   
 }
 
 
