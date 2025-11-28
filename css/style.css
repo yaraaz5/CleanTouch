@@ -209,10 +209,10 @@ textarea{min-height:110px; resize:vertical}
   height: 40px;
   border-radius: 50%;
   background-color: #cfe9ff;
-  background-image: url("../images/SETTINGSS.png"); 
+  background-image: url("../images/sting.png"); 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200%; /* adjusts image size inside the circle */
+  background-size: 150%; /* adjusts image size inside the circle */
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
