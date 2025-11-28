@@ -1035,9 +1035,13 @@ body.theme-green .sort-box label {
   color: #f1b48d !important;  
 }
 
-
+/* Restore bubbles for green theme header */
 body.theme-green header {
-  background: #1c5a47 !important;
+  background-color: #1c5a47 !important;
+  background-image: url("../images/bubbles.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: 120px !important;
 }
 
 
