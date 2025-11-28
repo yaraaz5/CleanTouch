@@ -368,89 +368,79 @@ document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("applicationForm");
   if (!form) return;
 
-  var fullNameInput = document.getElementById("fullName");
-  var dobInput      = document.getElementById("dob");
-  var emailInput    = document.getElementById("email");
-  var expertiseInput= document.getElementById("expertise");
-  var educationInput= document.getElementById("education");
-  var photoInput    = document.getElementById("photo");
-  var skillsInput   = document.getElementById("skills");
-  var reasonInput   = document.getElementById("reason");
-  var submitBtn     = document.getElementById("submitBtn");
+  var fullNameInput  = document.getElementById("fullName");
+  var dobInput       = document.getElementById("dob");
+  var emailInput     = document.getElementById("email");
+  var expertiseInput = document.getElementById("expertise");
+  var educationInput = document.getElementById("education");
+  var skillsInput    = document.getElementById("skills");
+  var reasonInput    = document.getElementById("reason");
+  var photoInput     = document.getElementById("photo");
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  function isFormValid() {
     var fullName  = fullNameInput.value.trim();
     var dobValue  = dobInput.value;
     var email     = emailInput.value.trim();
     var expertise = expertiseInput.value.trim();
+    var education = educationInput.value.trim();
     var skills    = skillsInput.value.trim();
+    var reason    = reasonInput.value.trim();
     var photoFile = photoInput.files[0];
 
+    var errors = [];
 
-    if (!fullName || !dobValue || !email || !expertise || !skills || !photoFile) {
-      return false;
+    // ===================================================
+    // REQUIRED FIELD CHECKS
+    // ===================================================
+    if (!fullName) errors.push("Full Name is required.");
+    if (!dobValue) errors.push("Date of Birth is required.");
+    if (!email) errors.push("Email is required.");
+    if (!expertise) errors.push("Area of Expertise is required.");
+    if (!education) errors.push("Education is required.");
+    if (!skills) errors.push("Skills & Achievements field is required.");
+    if (!reason) errors.push("Reason for applying is required.");
+    if (!photoFile) errors.push("Photo upload is required.");
+
+    // ===================================================
+    // NAME VALIDATION — cannot start with number
+    // ===================================================
+    if (fullName && /^\d/.test(fullName)) {
+      errors.push("Full Name cannot start with a number.");
     }
 
-  
-    if (/^\d/.test(fullName)) {
-      return false;
+    // ===================================================
+    // DOB VALIDATION — must not be after 2008
+    // ===================================================
+    if (dobValue) {
+      var dobDate = new Date(dobValue);
+      var lastAllowed = new Date("2008-12-31");
+      if (dobDate > lastAllowed) {
+        errors.push("Date of Birth must not be after 2008.");
+      }
     }
 
-  
-    if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-      return false;
+    // ===================================================
+    // PHOTO VALIDATION — must be an image
+    // ===================================================
+    if (photoFile && !photoFile.type.startsWith("image/")) {
+      errors.push("Photo must be an image file (jpg, jpeg, png, gif).");
     }
 
-  
-    if (!photoFile.type || photoFile.type.indexOf("image/") !== 0) {
-      return false;
-    }
-
-    
-    var dobDate       = new Date(dobValue);
-    var lastAllowed   = new Date("2008-12-31");
-    if (dobDate > lastAllowed) {
-      return false;
-    }
-
-    return true;
-  }
-
-  
-  function updateSubmitState() {
-    if (isFormValid()) {
-      submitBtn.disabled = false;
-    } else {
-      submitBtn.disabled = true;
-    }
-  }
-
-
-  fullNameInput.addEventListener("input", updateSubmitState);
-  dobInput.addEventListener("change", updateSubmitState);
-  emailInput.addEventListener("input", updateSubmitState);
-  expertiseInput.addEventListener("input", updateSubmitState);
-  educationInput.addEventListener("input", updateSubmitState);
-  photoInput.addEventListener("change", updateSubmitState);
-  skillsInput.addEventListener("input", updateSubmitState);
-  reasonInput.addEventListener("input", updateSubmitState);
-
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // نمنع الإرسال العادي
-
-    if (!isFormValid()) {
-      alert("Please fill in all required fields correctly.");
-      updateSubmitState();
+    // ===================================================
+    // SHOW ERRORS IF ANY
+    // ===================================================
+    if (errors.length > 0) {
+      alert("Please fix the following:\n\n• " + errors.join("\n• "));
       return;
     }
 
-    var fullName = fullNameInput.value.trim();
-
-    alert("Your application has been received. Thank you, " + fullName + "!");
+    // ===================================================
+    // SUCCESS MESSAGE
+    // ===================================================
+    alert("Thank you, " + fullName + "! Your application has been successfully submitted.");
     form.reset();
-    submitBtn.disabled = true; 
   });
 });
 /*------------------------------------------------------End YARA-------------------------------------------------------------------*/
