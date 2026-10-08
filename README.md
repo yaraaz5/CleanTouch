@@ -8,10 +8,10 @@
 
 [![Live demo](https://img.shields.io/badge/Live_demo-yaraaz5.github.io%2FCleanTouch-2a78d6?style=for-the-badge)](https://yaraaz5.github.io/CleanTouch/)
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Responsive](https://img.shields.io/badge/Responsive-mobile_%7C_tablet_%7C_desktop-4cc38a?style=flat)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](index.html)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](css/style.css)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](js/script.js)
+[![Responsive](https://img.shields.io/badge/Responsive-mobile_%7C_tablet_%7C_desktop-4cc38a?style=flat)](docs/screenshots/mobile.png)
 
 [Live demo](https://yaraaz5.github.io/CleanTouch/) · [Features](#features) · [Screenshots](#screenshots) · [Run locally](#run-it-locally)
 
