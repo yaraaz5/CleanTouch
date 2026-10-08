@@ -1,10 +1,29 @@
-# Clean Touch — Laundry Services Website
+<div align="center">
 
-A multi-page front-end website for a laundry business, built with plain **HTML, CSS and JavaScript** (no frameworks). It has a customer side for browsing and booking services, and a provider side for managing services and staff. Data the user adds is kept in the browser with `localStorage`.
+<img src="docs/logo.png" alt="Clean Touch logo" width="180">
 
-**Live demo:** https://yaraaz5.github.io/CleanTouch/
+# Clean Touch
 
-![Home page](docs/screenshots/home.png)
+**A laundry services website with booking for customers and a dashboard for providers.**
+
+[![Live demo](https://img.shields.io/badge/Live_demo-yaraaz5.github.io%2FCleanTouch-2a78d6?style=for-the-badge)](https://yaraaz5.github.io/CleanTouch/)
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Responsive](https://img.shields.io/badge/Responsive-mobile_%7C_tablet_%7C_desktop-4cc38a?style=flat)
+
+[Live demo](https://yaraaz5.github.io/CleanTouch/) · [Features](#features) · [Screenshots](#screenshots) · [Run locally](#run-it-locally)
+
+</div>
+
+<br>
+
+![Clean Touch home page](docs/screenshots/home.png)
+
+## About
+
+Clean Touch is a multi-page front-end website for a laundry business, built with plain **HTML, CSS and JavaScript** (no frameworks or libraries). Customers can browse and book services; the service provider can manage services and staff. Anything a user adds is saved in the browser with `localStorage`, so it is still there on the next visit.
 
 ## Features
 
