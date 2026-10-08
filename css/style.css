@@ -137,7 +137,7 @@ textarea{min-height:110px; resize:vertical}
   height: 40px;
   border-radius: 50%;
   background-color: #cfe9ff;
-  background-image: url("../images/icon.png.png"); 
+  background-image: url("../images/user-icon.png"); 
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%; 
@@ -1204,3 +1204,46 @@ body.theme-green .rating input:checked ~ label {
 
 
 
+
+/* Wide tables (staff profiles, previous requests): scroll sideways inside
+   their own box on phones instead of stretching the whole page */
+@media (max-width: 768px) {
+  .profile-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* The "Why do you want to join" box spans 2 columns on desktop; on a
+     one-column phone layout that created an extra column off-screen */
+  .form-3 > div {
+    grid-column: auto !important;
+  }
+}
+
+/* Laptop widths: keep the nav links clear of the bubble decoration on the
+   right edge of the header (they overlapped below ~1366px wide) */
+@media (min-width: 769px) and (max-width: 1400px) {
+  .header-row {
+    padding-right: 70px;
+  }
+  header,
+  body.theme-green header {
+    background-size: 80px !important;
+  }
+  .nav {
+    gap: 4px;
+  }
+  .nav a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Phones: the stacked menu makes the header very tall, so let it scroll
+   away instead of staying fixed over 40% of the screen */
+@media (max-width: 768px) {
+  header {
+    position: static;
+  }
+}

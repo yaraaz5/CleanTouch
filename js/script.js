@@ -78,11 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
     list.forEach((card) => servicesContainer.appendChild(card));
   }
 
-  function shuffleServices() {
-    const shuffled = [...serviceBoxes].sort(() => Math.random() - 0.5);
-    renderServices(shuffled);
-  }
-
   function sortByName(order) {
     const sorted = [...serviceBoxes].sort((a, b) => {
       const nameA = a.querySelector("h3").innerText.toLowerCase();
@@ -111,15 +106,21 @@ document.addEventListener("DOMContentLoaded", function () {
     renderServices(sorted);
   }
 
-  sortSelect.addEventListener("change", function () {
-    if (this.value === "a-z" || this.value === "z-a") {
-      sortByName(this.value);
-    } else if (this.value === "low-high" || this.value === "high-low") {
-      sortByPrice(this.value);
+  function applySort(value) {
+    if (value === "a-z" || value === "z-a") {
+      sortByName(value);
+    } else if (value === "low-high" || value === "high-low") {
+      sortByPrice(value);
     }
+  }
+
+  sortSelect.addEventListener("change", function () {
+    applySort(this.value);
   });
 
-  shuffleServices();
+  // Show the list in the order the dropdown says (previously it was shuffled
+  // on load while the dropdown still read "A - Z").
+  applySort(sortSelect.value);
 });
 
 /*------------------------------------------------------TALA-------------------------------------------------------------------*/
@@ -143,7 +144,22 @@ if (document.getElementById("requestForm")) {
     const summaryBox = document.getElementById("requestSummary");
     const requestList = document.getElementById("requestList");
 
-    let storedRequests = [];   
+    let storedRequests = [];
+
+    // "Book Now" on the Services page links here with ?service=<name>.
+    // Pre-select the matching option (names differ slightly, e.g. "Folding"
+    // vs "Folding Clothes Professionally", so match on the start of the name).
+    const requested = new URLSearchParams(window.location.search).get("service");
+    if (requested) {
+        const wanted = requested.toLowerCase().replace(/[^a-z]/g, "");
+        for (const option of service.options) {
+            const name = option.value.toLowerCase().replace(/[^a-z]/g, "");
+            if (option.value && name.startsWith(wanted)) {
+                service.value = option.value;
+                break;
+            }
+        }
+    }
 
    
     form.addEventListener("submit", function(event) {
@@ -172,7 +188,8 @@ if (document.getElementById("requestForm")) {
             const today = new Date();
             today.setHours(0,0,0,0);
 
-            const selected = new Date(date.value);
+            // "T00:00" makes the date local midnight (a bare "YYYY-MM-DD" is read as UTC)
+            const selected = new Date(date.value + "T00:00");
             const diff = (selected - today) / (1000 * 60 * 60 * 24);
 
             if (diff < 2) {
@@ -252,7 +269,8 @@ if (applyButton) {
 
         if (validVouchers.hasOwnProperty(code)) {
             const discountValue = validVouchers[code];
-            alert("Voucher applied successfully! You saved " + discountValue + " SAR.");
+            // CLEANTOUCH20 is advertised on the home page as 20% off, not 20 SAR
+            alert("Voucher applied successfully! You get " + discountValue + "% off your order.");
         } else {
             alert("Invalid voucher code. Valid codes are DISCOUNT10 and CLEANTOUCH20");
         }
@@ -293,6 +311,11 @@ if (document.getElementById("evaluationForm")) {
         if (serviceValue === "") {
             errors.push("Please select a service.");
             service.classList.add("field-error");
+        }
+
+        if (nameValue === "" || /[0-9?!@]/.test(nameValue)) {
+            errors.push("Please enter your full name (no numbers or ?!@).");
+            fullName.classList.add("field-error");
         }
 
         if (!rating) {
@@ -463,41 +486,61 @@ document.addEventListener("DOMContentLoaded", function () {
     var storedServices = localStorage.getItem("ct_services");
     var servicesArr = storedServices ? JSON.parse(storedServices) : [];
 
-    if (!servicesArr.length) {
-      listContainer.innerHTML = "<p>No services added yet.</p>";
-    } else {
-      listContainer.innerHTML = ""; 
+    // Keep the four built-in services and add the provider's new ones after
+    // them. (Previously the list was cleared on every load, so a first-time
+    // visitor saw "0 services" and adding one service hid the built-in four.)
+    for (var i = 0; i < servicesArr.length; i++) {
+      var s = servicesArr[i];
 
-      for (var i = 0; i < servicesArr.length; i++) {
-        var s = servicesArr[i];
+      var card = document.createElement("div");
+      card.className = "service-card";
 
-        var card = document.createElement("div");
-        card.className = "service-card";
+      var thumb = document.createElement("div");
+      var img = document.createElement("img");
+      img.src = "images/ddd.png";
+      img.alt = s.name;
+      img.className = "service-img";
+      thumb.appendChild(img);
 
-        card.innerHTML =
-          '<div class="thumb">' +
-            '<img src="images/ddd.png" alt="CleanTouch Service">' +
-          '</div>' +
-          '<div class="content">' +
-            "<p>" +
-              "<strong>" + s.name + "</strong><br>" +
-              s.description + "<br>" +
-              "SAR " + s.price +
-            "</p>" +
-            '<a href="#" class="btn gray" aria-disabled="true">Edit</a>' +
-          "</div>";
+      // Build text with textContent so user input is never parsed as HTML
+      var content = document.createElement("div");
+      content.className = "content";
+      var p = document.createElement("p");
+      p.appendChild(document.createTextNode(s.name));
+      p.appendChild(document.createElement("br"));
+      p.appendChild(document.createTextNode(s.description));
+      p.appendChild(document.createElement("br"));
+      p.appendChild(document.createTextNode("SAR " + s.price));
+      var edit = document.createElement("a");
+      edit.className = "btn gray";
+      edit.href = "#";
+      edit.textContent = "Edit";
+      content.appendChild(p);
+      content.appendChild(edit);
 
-        listContainer.appendChild(card);
-      }
+      card.appendChild(thumb);
+      card.appendChild(content);
+      listContainer.appendChild(card);
     }
 
     var totalBox = document.getElementById("totalServices");
     if (totalBox) {
-      totalBox.textContent = servicesArr.length;
+      totalBox.textContent = listContainer.querySelectorAll(".service-card").length;
     }
   }
 
+  // Staff Members tile: the 4 original staff, minus any deleted, plus any added
+  var staffCountBox = document.getElementById("staffCount");
+  if (staffCountBox) {
+    var removedDefaults = JSON.parse(localStorage.getItem("ct_removed_staff") || "[]");
+    var addedStaff = JSON.parse(localStorage.getItem("ct_staff") || "[]");
+    staffCountBox.textContent = DEFAULT_STAFF_COUNT - removedDefaults.length + addedStaff.length;
+  }
+
 });
+
+// Number of staff members hard-coded in manage-staff.html / about.html
+var DEFAULT_STAFF_COUNT = 4;
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -567,6 +610,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var staffList = manageStaffForm.querySelector(".staff-list");
 
+  function memberName(item) {
+    var nameEl = item.querySelector("span:last-child");
+    return nameEl ? nameEl.textContent.trim() : "";
+  }
+
+  // The four original staff are written in the HTML. Remember their names, and
+  // hide any the provider deleted earlier so deletions survive a page reload.
+  var defaultNames = [];
+  var removedDefaults = JSON.parse(localStorage.getItem("ct_removed_staff") || "[]");
+  var defaultItems = staffList ? staffList.querySelectorAll(".staff-item") : [];
+  for (var d = 0; d < defaultItems.length; d++) {
+    var defaultName = memberName(defaultItems[d]);
+    defaultNames.push(defaultName);
+    if (removedDefaults.indexOf(defaultName) !== -1) {
+      defaultItems[d].parentNode.removeChild(defaultItems[d]);
+    }
+  }
+
   var storedStaff = localStorage.getItem("ct_staff");
   var staffArr = storedStaff ? JSON.parse(storedStaff) : [];
 
@@ -574,14 +635,29 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i < staffArr.length; i++) {
       var m = staffArr[i];
 
+      // Same markup as the original staff; generic avatar (no photo is stored)
       var label = document.createElement("label");
       label.className = "staff-item";
 
-      label.innerHTML =
-        '<input type="checkbox" class="staff-check">' +
-        '<div><img src="images/emp-new.png" alt="' + m.name + '" width="100" height="56"></div>' +
-        '<div>' + m.name + '</div>';
+      var check = document.createElement("input");
+      check.type = "checkbox";
+      check.className = "staff-check";
 
+      var photoWrap = document.createElement("span");
+      var photo = document.createElement("img");
+      photo.src = "images/CustIcon.png";
+      photo.alt = m.name;
+      photo.width = 100;
+      photo.height = 56;
+      photo.style.objectFit = "contain";
+      photoWrap.appendChild(photo);
+
+      var nameSpan = document.createElement("span");
+      nameSpan.textContent = m.name;
+
+      label.appendChild(check);
+      label.appendChild(photoWrap);
+      label.appendChild(nameSpan);
       staffList.appendChild(label);
     }
   }
@@ -613,11 +689,9 @@ document.addEventListener("DOMContentLoaded", function () {
       var cb = selectedCheckboxes[j];
       var item = cb.parentNode;     // label.staff-item
 
-      var nameDiv = item.querySelector("div:last-child");
-      var memberName = nameDiv ? nameDiv.textContent : "";
-
-      if (memberName !== "") {
-        selectedNames.push(memberName);
+      var name = memberName(item);
+      if (name !== "") {
+        selectedNames.push(name);
       }
 
       if (item && item.parentNode) {
@@ -637,6 +711,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       localStorage.setItem("ct_staff", JSON.stringify(filtered));
+
+      // Remember deleted original staff (they live in the HTML, not storage)
+      var removed = JSON.parse(localStorage.getItem("ct_removed_staff") || "[]");
+      for (var r = 0; r < selectedNames.length; r++) {
+        if (defaultNames.indexOf(selectedNames[r]) !== -1 && removed.indexOf(selectedNames[r]) === -1) {
+          removed.push(selectedNames[r]);
+        }
+      }
+      localStorage.setItem("ct_removed_staff", JSON.stringify(removed));
     }
 
     manageStaffForm.reset();
